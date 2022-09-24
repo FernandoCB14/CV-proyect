@@ -10,7 +10,6 @@ function init(){
                 'Authorization': "bearer " + localStorage.getItem("token"),
             }
         }
-        console.log(headers)
         // loadUsuario();
         document.getElementById('logout').addEventListener('click', borrarToken); 
     }else{

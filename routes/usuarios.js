@@ -16,16 +16,19 @@ usuarios.get('/', async(req, res) => {
     
 });
 
-usuarios.post("/", async (req, res, next) => {
+usuarios.post("/insert", async (req, res, next) => {
 
     const { nombre, apellido_paterno, apellido_materno, direccion, codigo_postal,estado, correo_electronico, numero_telefono, formacion_academica, experiencia_profesional, idiomas_domina } = req.body;
 
+    console.log(req.body);
     if (nombre && apellido_paterno && apellido_materno && direccion && codigo_postal && estado && correo_electronico && numero_telefono && formacion_academica && experiencia_profesional && idiomas_domina) {
         let query = "INSERT INTO usuario(nombre, apellido_paterno, apellido_materno, direccion, codigo_postal,estado, correo_electronico, numero_telefono, formacion_academica, experiencia_profesional, idiomas_domina)";
-        query += `VALUES('${nombre}', '${apellido_paterno}', '${apellido_materno}', '${direccion}', '${codigo_postal}', '${estado}', '${correo_electronico}', '${numero_telefono}','${formacion_academica}', '${experiencia_profesional}', '${idiomas_domina}')`;
+        query += `VALUES('${nombre}','${apellido_paterno}', '${apellido_materno}', '${direccion}', '${codigo_postal}', '${estado}', '${correo_electronico}', '${numero_telefono}','${formacion_academica}', '${experiencia_profesional}', '${idiomas_domina}')`;
+        console.log(query)
         const rows = await db.query(query);
         console.log(rows);
         if (rows.affectedRows == 1) {
+
             return res.status(201).json({ code: 201, message: "usuario insertado correctamente" });
         }
 
@@ -56,7 +59,6 @@ usuarios.put("/:id([0-9]{1,3})", async (req, res, next) => {
 
 });
 
-
 usuarios.delete("/:id([0-9]{1,3})", async (req, res, next) =>{
 
     const query = `DELETE FROM usuario WHERE id_usuario = ${req.params.id} `;
@@ -67,8 +69,6 @@ usuarios.delete("/:id([0-9]{1,3})", async (req, res, next) =>{
     }
     return res. status(404).json({code: 404, message: "Usuario no encontrado"});
 });
-
-
 
 usuarios.get('/:id([0-9]{1,3})', async (req, res, next) => {
     const id = req.params.id;
@@ -81,11 +81,16 @@ usuarios.get('/:id([0-9]{1,3})', async (req, res, next) => {
 });
 
 //[A-Za-z]+) sirve para que acepte texto de cualquier tipo 
-usuarios.get('/:name([A-Za-z]+)', async (req, res, next) => {
+usuarios.get('/:name(([a-zA-Z]*(%20)?){1,5})', async (req, res, next) => {
     const name = req.params.name;
-    const emp = await db.query("SELECT * FROM usuario WHERE nombre ='" + name + "';");
-
+    const encoudname= decodeURI(name);
+    console.log(encoudname);
+    
+    // document.write(encoudname);
+    const emp = await db.query("SELECT * FROM usuario WHERE nombre ='" + encoudname + "';");
+    // const emp =0;
     if (emp.length > 0) {
+        
         return res.status(200).json({ code: 200, message: emp });
     }
     return res.status(404).json({ code: 404, message: "Empleado no encontrado" });
