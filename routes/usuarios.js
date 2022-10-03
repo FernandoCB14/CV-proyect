@@ -40,6 +40,7 @@ usuarios.post("/insert", async (req, res, next) => {
 
 
 usuarios.put("/:id([0-9]{1,3})", async (req, res, next) => {
+
     const {nombre, apellido_paterno, apellido_materno, direccion, codigo_postal,estado, 
         correo_electronico, numero_telefono, formacion_academica, experiencia_profesional, idiomas_domina } = req.body;
 
@@ -55,7 +56,7 @@ usuarios.put("/:id([0-9]{1,3})", async (req, res, next) => {
 
         return res.status(500).json({ code: 500, message: "ocurrió un error" });
     }
-    return res.status(500).json({code: 500, message: "Campos incompletos"});
+    return res.status(400).json({code: 400, message: "Campos incompletos"});
 
 });
 

@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Open CV </title>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script src= "./users/js/get.js"></script>
+    <script src="./users/js/get.js"></script>
+
 </head>
+
 <body>
 
     <h1>Aqui esté el CV ya hecho</h1>
@@ -15,19 +18,98 @@
         <label for="input-id">Consultar por id</label>
         <input class="form-control" id="input-id" placeholder="***********">
     </div>
+
+    <div id="datos-usuario"></div>
+
+    <!-- <button onclick="muestraMisGrupos()"> Enseña usuarios</button> -->
+
+    <script type="text/javascript">
+        function showData(usuario) {
+            var datosUsuario = document.getElementById("datos-usuario");
+            for (var i = 0; i < usuario.length; i++) {
+                datosUsuario.innerHTML += `<div >
+                                            <div class="form-group">
+                                                <label for="input-name">Nombre</label>
+                                                <input class="form-control" value=${usuario[i].nombre} id="input-name" placeholder="******">
+                                                <label for="input-ln">Apellido Paterno</label>
+                                                <input class="form-control" value = ${usuario[i].apellido_paterno} id="input-ln" placeholder="********** ">
+                                            </div>
+                                            <div >
+                                                <label for="input-mln">Apellido materno</label>
+                                                <input class="form-control" value=${usuario[i].apellido_materno} id="input-mln" placeholder="********** ">
+                                                <label for="input-dir">direccion</label>
+                                                <input class="form-control"  value = ${usuario[i].direccion} id="input-dir" placeholder="********** ">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="input-zp">codigo postal</label>
+                                                <input class="form-control" value = ${usuario[i].codigo_postal} id="input-zp" placeholder="********** ">
+                                            </div>
+                                           </div>`;
+
+            }
+            const limpiarDivButton = document.createElement('button');
+            limpiarDivButton.innerHTML = "Limpiar";
+            limpiarDivButton.onclick = () => {
+                datosUsuario.innerHTML = "";
+            };
+            datosUsuario.appendChild(limpiarDivButton);
+            
+        }
+    </script>
+<!-- 
+<div class="form-group">
+    <label for="input-name">Nombre</label>
+    <input type="name" class="form-control" id="input-name" placeholder="******">
+</div>
+<div class="form-group">
+    <label for="input-ln">Apellido Paterno</label>
+    <input class="form-control" id="input-ln" placeholder="********** ">
+</div>
+ <div class="form-group">
+    <label for="input-mln">Apellido materno</label>
+    <input class="form-control" id="input-mln" placeholder="********** ">
+</div>
+<div class="form-group">
+    <label for="input-dir">direccion</label>
+    <input class="form-control" id="input-dir" placeholder="********** ">
+</div>
+<div class="form-group">
+    <label for="input-zp">codigo postal</label>
+    <input class="form-control" id="input-zp" placeholder="********** ">
+</div>
+<div class="form-group">
+    <label for="input-sta">estado</label>
+    <input class="form-control" id="input-sta" placeholder="********** ">
+</div>
+<div class="form-group">
+    <label for="input-mail">correo electronico</label>
+    <input class="form-control" id="input-mail" placeholder="********** ">
+</div>
+<div class="form-group">
+    <label for="input-tnum">número de teléfono</label>
+    <input class="form-control" id="input-tnum" placeholder="********** ">
+</div>
+<div class="form-group">
+    <label for="input-formacd">formacion academica</label>
+    <input class="form-control" id="input-formacd" placeholder="********** ">
+</div>
+<div class="form-group">
+    <label for="input-profexp">experiencia profecional</label>
+    <input class="form-control" id="input-profexp" placeholder="********** ">
+</div>
+<div class="form-group">
+    <label for="input-idioms">idiomas que domina</label>
+    <input class="form-control" id="input-idioms" placeholder="********** ">
+</div> -->
+
     <div class="d-flex justify-content-between">
         <button id="btn1">consultar</button>
     </div>
 
-    <div class="form-group">
-        <label for="input-name">Consultar por nombre</label>
-        <input class="form-control" id="input-name" placeholder="***********">
-    </div>
-    <div class="d-flex justify-content-between">
-        <button id="btn2">consultar</button>
-        <button id="btn3">Actualizar</button>
-        
-    </div>
-    
+    <button id="btn3">Actualizar</button>
+
+
+
 </body>
+
 </html>
