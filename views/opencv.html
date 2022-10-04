@@ -43,6 +43,25 @@
                                             <div class="form-group">
                                                 <label for="input-zp">codigo postal</label>
                                                 <input class="form-control" value = ${usuario[i].codigo_postal} id="input-zp" placeholder="********** ">
+                                                <label for="input-sta">estado</label>
+                                                <input class="form-control" value = ${usuario[i].estado} id="input-sta" placeholder="********** ">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="input-mail">correo electronico</label>
+                                                <input class="form-control" value = ${usuario[i].correo_electronico} id="input-mail" placeholder="********** ">
+                                                <label for="input-tnum">número de teléfono</label>
+                                                <input class="form-control"value = ${usuario[i].numero_telefono} id="input-tnum" placeholder="********** ">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="input-formacd">formacion academica</label>
+                                                <input class="form-control" value = ${usuario[i].formacion_academica} id="input-formacd" placeholder="********** ">
+                                                <label for="input-profexp">experiencia profecional</label>
+                                                <input class="form-control" value = ${usuario[i].experiencia_profesional} id="input-profexp" placeholder="********** ">
+                                                
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="input-idioms">idiomas que domina</label>
+                                                <input class="form-control" value = ${usuario[i].idiomas_domina} id="input-idioms" placeholder="********** ">
                                             </div>
                                            </div>`;
 
@@ -53,60 +72,23 @@
                 datosUsuario.innerHTML = "";
             };
             datosUsuario.appendChild(limpiarDivButton);
-            
+
         }
     </script>
-<!-- 
-<div class="form-group">
-    <label for="input-name">Nombre</label>
-    <input type="name" class="form-control" id="input-name" placeholder="******">
-</div>
-<div class="form-group">
-    <label for="input-ln">Apellido Paterno</label>
-    <input class="form-control" id="input-ln" placeholder="********** ">
-</div>
- <div class="form-group">
-    <label for="input-mln">Apellido materno</label>
-    <input class="form-control" id="input-mln" placeholder="********** ">
-</div>
-<div class="form-group">
-    <label for="input-dir">direccion</label>
-    <input class="form-control" id="input-dir" placeholder="********** ">
-</div>
-<div class="form-group">
-    <label for="input-zp">codigo postal</label>
-    <input class="form-control" id="input-zp" placeholder="********** ">
-</div>
-<div class="form-group">
-    <label for="input-sta">estado</label>
-    <input class="form-control" id="input-sta" placeholder="********** ">
-</div>
-<div class="form-group">
-    <label for="input-mail">correo electronico</label>
-    <input class="form-control" id="input-mail" placeholder="********** ">
-</div>
-<div class="form-group">
-    <label for="input-tnum">número de teléfono</label>
-    <input class="form-control" id="input-tnum" placeholder="********** ">
-</div>
-<div class="form-group">
-    <label for="input-formacd">formacion academica</label>
-    <input class="form-control" id="input-formacd" placeholder="********** ">
-</div>
-<div class="form-group">
-    <label for="input-profexp">experiencia profecional</label>
-    <input class="form-control" id="input-profexp" placeholder="********** ">
-</div>
-<div class="form-group">
-    <label for="input-idioms">idiomas que domina</label>
-    <input class="form-control" id="input-idioms" placeholder="********** ">
-</div> -->
 
     <div class="d-flex justify-content-between">
         <button id="btn1">consultar</button>
+        <button id="btn3">Actualizar</button>
+        <input type="button" value="Página anterior1" onClick="history.go(-1);">
+        <input type="button" value="Página anterior" onClick="info.html">
+        
+        <!-- <a href="info.html"><input type="button" value="Ir"></a> -->
+        <!-- <script>
+            window.location.href = "info.html"
+        </script> -->
     </div>
 
-    <button id="btn3">Actualizar</button>
+    
 
 
 

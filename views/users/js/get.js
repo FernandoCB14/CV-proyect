@@ -33,6 +33,8 @@ function searchid() {
 //PUT 
 
 function update(){
+
+    var id = document.getElementById('input-id').value;
     var name = document.getElementById('input-name').value;
     var last_name= document.getElementById('input-ln').value;
     var mlast_name= document.getElementById('input-mln').value;
@@ -47,8 +49,9 @@ function update(){
     
     axios({
         method: 'put',
-        url:'http://localhost:8081/usuarios', 
+        url:'http://localhost:8081/usuarios/' + id, 
         data:{
+            // id_usuario:id,
             nombre: name,
             apellido_paterno: last_name,
             apellido_materno: mlast_name,
@@ -66,7 +69,8 @@ function update(){
         }
     }).then(function (res){
         if(res.data.code ===200){
-            alert("Datos Actualizados");
+            console.log(res.data.message);
+            alert("Datos actualizados");
         }else{
             alert("Algo salió mal");
         }
