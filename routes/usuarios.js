@@ -4,7 +4,6 @@ const db = require('../models/database');
 
 
 
-//TODOS: cambiar los atributos de las rutas 
 
 usuarios.get('/', async(req, res) => {
     try {
@@ -18,22 +17,31 @@ usuarios.get('/', async(req, res) => {
 
 usuarios.post("/insert", async (req, res, next) => {
 
-    const { nombre, apellido_paterno, apellido_materno, direccion, codigo_postal,estado, correo_electronico, numero_telefono, formacion_academica, experiencia_profesional, idiomas_domina } = req.body;
+    //TODOS: hacer insert en dos trablas
+    // const id_usuario = req.user;
+    // console.log(id_usuario);
+    const { nombre, apellido_paterno, apellido_materno, direccion, codigo_postal,estado, correo_electronico, numero_telefono, formacion_academica, experiencia_profesional, idiomas_domina, habilidades_academico, otros_intereses} = req.body;
 
-    console.log(req.body);
-    if (nombre && apellido_paterno && apellido_materno && direccion && codigo_postal && estado && correo_electronico && numero_telefono && formacion_academica && experiencia_profesional && idiomas_domina) {
+    // console.log(req.body);
+    if (nombre && apellido_paterno && apellido_materno && direccion && codigo_postal && estado 
+        && correo_electronico && numero_telefono && formacion_academica 
+        && experiencia_profesional && idiomas_domina && habilidades_academico && otros_intereses) {
         let query = "INSERT INTO usuario(nombre, apellido_paterno, apellido_materno, direccion, codigo_postal,estado, correo_electronico, numero_telefono, formacion_academica, experiencia_profesional, idiomas_domina)";
-        query += `VALUES('${nombre}','${apellido_paterno}', '${apellido_materno}', '${direccion}', '${codigo_postal}', '${estado}', '${correo_electronico}', '${numero_telefono}','${formacion_academica}', '${experiencia_profesional}', '${idiomas_domina}')`;
+        query += `VALUES('${nombre}','${apellido_paterno}', '${apellido_materno}', '${direccion}', '${codigo_postal}', '${estado}', '${correo_electronico}', '${numero_telefono}','${formacion_academica}', '${experiencia_profesional}', '${idiomas_domina}')
+        SET @idusuario= LAST_INSERT_ID();
+        "INSERT INTO perfil_academico(habilidades_academico,otros_intereses, id_usuario)"
+        VALUES('${habilidades_academico}', '${otros_intereses}', @idusuario);`;
         console.log(query)
         const rows = await db.query(query);
         console.log(rows);
         if (rows.affectedRows == 1) {
-
+            console.log('entre al if');
             return res.status(201).json({ code: 201, message: "usuario insertado correctamente" });
         }
-
-        return res.status(500).json({ code: 500, message: "ocurrió un error" });
+        console.log('llegue despues');
+        return res.status(400).json({ code: 400, message: "ocurrió un error" });
     }
+    console.log('me salte');
     return res.status(500).json({ code: 500, message: "Campos incompletos" });
 });
 

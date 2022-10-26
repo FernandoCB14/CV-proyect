@@ -32,10 +32,12 @@ function newdata(){
     var formacd= document.getElementById('input-formacd').value;
     var profexp= document.getElementById('input-profexp').value;
     var idioms= document.getElementById('input-idioms').value;
+    var hab=  document.getElementById('input-hab').value;
+    var otrosin=  document.getElementById('input-ointereses').value;
     
     axios({
         method: 'post',
-        url:'http://localhost:8081/usuarios/insert', 
+        url:'http://localhost:8081/usuarios/insert',
         data:{
             nombre: name,
             apellido_paterno: last_name,
@@ -47,7 +49,9 @@ function newdata(){
             numero_telefono: Tnum,
             formacion_academica: formacd,
             experiencia_profesional: profexp,
-            idiomas_domina: idioms
+            idiomas_domina: idioms,
+            habilidades_academico: hab,
+            otros_intereses:otrosin
         },
         headers:{
             'Authorization': "bearer " + localStorage.getItem("token"),

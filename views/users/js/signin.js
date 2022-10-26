@@ -28,17 +28,16 @@ function signin(){
             user_password: pass
         }
     }).then(function (res){
-        console.log(res);
-        window.location.href="login.html";
-        alert("Registro exitoso")
+        alert("Registro exitoso");
 
-        // if(res.data.code ===200){
-        //     localStorage.setItem('token', res.data.message);
-        //     window.location.href = "info.html";
+        if(res.data.code ===200){
+            localStorage.setItem('token', res.data.message);
+            window.location.href = "info.html";
+            console.log(res);
+            // window.location.href="login.html";
+            
 
-        // }else{
-        //     alert("Usuario y/o contraseña incorrectos\n Posible enemigo está tratando de acceder")
-        // }
+        }
     }).catch(function(err){
         console.log(err);
     });
