@@ -1,0 +1,56 @@
+body{
+    font-family: sans-serif;
+    margin: 0px;
+
+}
+
+a{
+    color: blanchedalmond;
+    text-decoration: none;
+
+}
+h2{
+    color: aliceblue;
+}
+
+header{
+    display: flex;
+    background-color: black;
+    min-height: 70px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    
+    
+}
+
+.div-logo{
+    display: flex;
+    align-items: center;
+    
+}
+
+.div-logo img{
+    height: 50px;
+    margin-right: 12px;
+
+}
+
+nav a{
+    font-weight: 600;
+    padding: 10px;
+
+}
+
+nav a:hover{
+    color:blue;
+}
+
+@media(max-width:680px){
+    header{
+        flex-direction: column;
+    }
+    nav{
+        padding: 10px 0px;
+    }
+}

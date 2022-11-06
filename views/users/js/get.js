@@ -19,6 +19,7 @@ function init(){
       
 }
 
+
 function searchid() {
     let idUsuario = document.getElementById("input-id").value;
     // const gruposDiv = document.getElementById('datos-usuario');

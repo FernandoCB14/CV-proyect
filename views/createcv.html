@@ -1,33 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-    <!-- <script src = "./routes/opencv.js"></script> -->
+<!-- <script src = "./routes/opencv.js"></script> -->
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Crear cv</title>
+    <link rel="stylesheet" href="../views/public/css/styles_createcv.css">
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <!-- <script src="./users/js/post.js"></script> -->
 </head>
+
 <body>
 
-    <h2>¿Eres estudiante?</h2>
-    <div class="col-12 col-lg-12">
-        <div class="form-group">
-            <form action="./cva.html">
-                <button class="btn btnopencv text-white"> Si</button>
-            </form>
+    <header>
+        <div class="div-logo">
+            <img src="./public/img/3.jpg" alt="logo">
+            <h2>CVitae</h2>
         </div>
-        <div class="form-group">
-            <form action="./cvp.html">
-                <button class="btn btnopencv text-white">No</button>
-            </form>
-        </div>
-        <div class="d-flex justify-content-between">
-            <input type="button" value="Regresar" onClick="history.go(-1);">
-        </div>
+    </header>
 
+    <div class="container-form">
+        <div class="formulario">
+            <h2>¿Eres estudiante?</h2>
+            <div class="buttons">
+                <form action="./cva.html">
+                    <button class="btn btnopencv text-white"> Si</button>
+                </form>
+                <form action="./cvp.html">
+                    <button class="btn btnopencv text-white">No</button>
+                </form>
+                <input type="button" value="Regresar" onClick="history.go(-1);">
+            </div>
+            
+            
+        </div>
     </div>
-    
+   
+   
+
+
 </body>
+
 </html>

@@ -7,8 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Open CV </title>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script src="./users/js/get.js"></script>
-
+    <script src="./users/js/get.js"></script> 
 </head>
 
 <body>
@@ -62,6 +61,8 @@
                                             <div class="form-group">
                                                 <label for="input-idioms">idiomas que domina</label>
                                                 <input class="form-control" value = ${usuario[i].idiomas_domina} id="input-idioms" placeholder="********** ">
+                                                <label for="input-idioms"> habilidades academicas</label>
+                                                <input class="form-control" value = ${usuario[i].habilidades_academico} id="input-idioms" placeholder="********** ">
                                             </div>
                                            </div>`;
 
@@ -82,11 +83,6 @@
         <input type="button" value="Regresar" onClick="history.go(-1);">
         <input type="submit" value="Imprime tu cv" class="btn btn-block imprime" onClick="window.print()">
     </div>
-
-    
-
-
-
 </body>
 
 </html>

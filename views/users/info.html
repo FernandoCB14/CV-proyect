@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>info</title>
-    <link rel="stylesheet" href="../public/css/styles_acceso2.css">
+    <link rel="stylesheet" href="../public/css/styles_info.css">
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <script src="./js/info.js"></script>
@@ -14,25 +14,22 @@
 
 <body>
     <div id="container">
-        <header>
-            <h1>Crea o edita tu curriculum vitae</h1>
-        </header>
-
         <div class="form-group">
-            <form action="../opencv.html">
-                <button class="btnopencv"> <i class='bx bxs-file-plus'></i> Cargar tu CV 
-                    
-                </button>
-                
-            </form>
+            <h1 class="h1">Crea o edita tu curriculum vitae</h1>
+            
             <form action="../createcv.html">
-                <button class="btn-secondary">Generar nuevo CV</button>
+                <button class="btncreatecv"> <i class='bx bxs-file-plus'></i> Generar nuevo CV</button>
             </form>
-        </div> 
-        <div class="logout">
-            <button id="logout" class="btn btn-primary border-0 bg-danger"> Cerrar sesión</button>
-        </div>
 
+            <form action="../opencv.html">
+                <button class="btnopencv"> <i class='bx bx-download' ></i>Cargar tu CV       
+                </button>
+            </form>
+
+        </div> 
+    </div>
+    <div class="logout">
+        <button id="logout" class="btn btn-primary border-0 bg-danger"> Cerrar sesión</button>
     </div>
 </body>
 

@@ -9,7 +9,7 @@ function init(){
                 'Authorization': "bearer " + localStorage.getItem("token"),
             }
         }
-        console.log(headers);
+        // console.log(headers);
         // searchid();
         document.getElementById('btn1').addEventListener('click', newdata);  
         // document.getElementById('btn2').addEventListener('click', searchname);  
