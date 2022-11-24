@@ -12,10 +12,13 @@ function init(){
         }
         // loadUsuario();
         document.getElementById('logout').addEventListener('click', borrarToken); 
+        
     }else{
         window.location.href="login.html";   
     }    
 }
+
+
 
 // function loadUsuario(){
 //     axios.get(url + "/usuarios",headers)

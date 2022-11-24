@@ -7,82 +7,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Open CV </title>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script src="./users/js/get.js"></script> 
+    <script src="./users/js/get.js"></script>
+    <link rel="stylesheet" href="../views/public/css/cva.css">
 </head>
 
 <body>
 
+
     <h1>Aqui esté el CV ya hecho</h1>
-    <div class="form-group">
+    <!-- <div class="form-group">
         <label for="input-id">Consultar por id</label>
         <input class="form-control" id="input-id" placeholder="***********">
-    </div>
+    </div> -->
 
     <div id="datos-usuario"></div>
 
-    <!-- <button onclick="muestraMisGrupos()"> Enseña usuarios</button> -->
+    <div class="tarjeta">
+        <div id="my-cvs"></div>
 
-    <script type="text/javascript">
-        function showData(usuario) {
-            var datosUsuario = document.getElementById("datos-usuario");
-            for (var i = 0; i < usuario.length; i++) {
-                datosUsuario.innerHTML += `<div >
-                                            <div class="form-group">
-                                                <label for="input-name">Nombre</label>
-                                                <input class="form-control" value=${usuario[i].nombre} id="input-name" placeholder="******">
-                                                <label for="input-ln">Apellido Paterno</label>
-                                                <input class="form-control" value = ${usuario[i].apellido_paterno} id="input-ln" placeholder="********** ">
-                                            </div>
-                                            <div >
-                                                <label for="input-mln">Apellido materno</label>
-                                                <input class="form-control" value=${usuario[i].apellido_materno} id="input-mln" placeholder="********** ">
-                                                <label for="input-dir">direccion</label>
-                                                <input class="form-control"  value = ${usuario[i].direccion} id="input-dir" placeholder="********** ">
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="input-zp">codigo postal</label>
-                                                <input class="form-control" value = ${usuario[i].codigo_postal} id="input-zp" placeholder="********** ">
-                                                <label for="input-sta">estado</label>
-                                                <input class="form-control" value = ${usuario[i].estado} id="input-sta" placeholder="********** ">
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="input-mail">correo electronico</label>
-                                                <input class="form-control" value = ${usuario[i].correo_electronico} id="input-mail" placeholder="********** ">
-                                                <label for="input-tnum">número de teléfono</label>
-                                                <input class="form-control"value = ${usuario[i].numero_telefono} id="input-tnum" placeholder="********** ">
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="input-formacd">formacion academica</label>
-                                                <input class="form-control" value = ${usuario[i].formacion_academica} id="input-formacd" placeholder="********** ">
-                                                <label for="input-profexp">experiencia profecional</label>
-                                                <input class="form-control" value = ${usuario[i].experiencia_profesional} id="input-profexp" placeholder="********** ">
-                                                
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="input-idioms">idiomas que domina</label>
-                                                <input class="form-control" value = ${usuario[i].idiomas_domina} id="input-idioms" placeholder="********** ">
-                                                <label for="input-idioms"> habilidades academicas</label>
-                                                <input class="form-control" value = ${usuario[i].habilidades_academico} id="input-idioms" placeholder="********** ">
-                                            </div>
-                                           </div>`;
+        <div class="buttons">
+            <button id="btn1">consultar</button>
+            <button id="btn2">mostrar</button>
+            <input type="button" value="Regresar" onClick="history.go(-1);">
+            <input type="submit" value="Imprime tu cv" class="btn btn-block imprime" onClick="window.print()">
+    
+        </div>
 
-            }
-            const limpiarDivButton = document.createElement('button');
-            limpiarDivButton.innerHTML = "Limpiar";
-            limpiarDivButton.onclick = () => {
-                datosUsuario.innerHTML = "";
-            };
-            datosUsuario.appendChild(limpiarDivButton);
-
-        }
-    </script>
-
-    <div class="d-flex justify-content-between">
-        <button id="btn1">consultar</button>
-        <button id="btn3">Actualizar</button>
-        <input type="button" value="Regresar" onClick="history.go(-1);">
-        <input type="submit" value="Imprime tu cv" class="btn btn-block imprime" onClick="window.print()">
     </div>
+    
+
+    
+    
+
+
+
+
+
+
+
+
 </body>
 
 </html>

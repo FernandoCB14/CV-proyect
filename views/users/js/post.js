@@ -58,9 +58,9 @@ function newdata(){
         }
     }).then(function (res){
         if(res.data.code ===200){
-        //     alert("Datos creados");
-        // }else{
-        //     alert("Algo salió mal");
+            alert("Datos creados");
+        }else{
+            alert("Algo salió mal");
         }
     }).catch(function(err){
         console.log(err);
