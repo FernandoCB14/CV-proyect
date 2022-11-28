@@ -6,7 +6,7 @@
 }
 
 body{
-    background-image: url(https://st2.depositphotos.com/3730721/7212/i/600/depositphotos_72123213-stock-photo-womans-hand-writing-on-paper.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.0)), url("../img/images.jpg");
     height: 100vh;
     align-items: center;
     background-position: center;
@@ -16,45 +16,58 @@ body{
     display: flex;
     justify-content: center;  
     flex-wrap: wrap;
+    text-align: center;
+    
    
 }
 
 #container{
-    width: 600px;
+    /* width: 600px;
     height: 308px;
     padding: 1.5rem;
     margin: 1.5rem;
-    background-color: rgb(51, 51, 51, 0.602);
+    background-color: rgba(24, 24, 24, 0.602);
+    display: flex;
+    justify-content: center;
+    border-radius: 10px; */
+
+    width: 600px;
+    height: 400px;
+    padding: 1rem;
+    margin: 1.5rem;
+    background-color: rgba(39, 39, 39, 0.602);
+    /* justify-content: center; */
+    border-radius: 10px;
+    text-align: center;
+    justify-content: center;
     
-}
-
-.h1 {
-    margin-left: -130px;
-
-    /* margin-left: 40px; */
-
-
-
+    
 }
 
 .form-group{
-    width: 70%;
-    margin-left: 32%;
-    
+
+    text-align: center;
+    justify-content: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 70px;
+    /* margin-left: 150px;
+    margin-right: 150px; */
+    gap: 0px;
 }
 
 .form-group button{
     width:60%;
     margin: auto;
     margin-left: -25px;
-    border: solid thin #BB00EB;
+    border: solid thin #26477D;
     padding: .7rem;
     margin-top: 1rem;
-    border-radius: 2rem; 
+    border-radius: 1.7rem; 
     font-weight: 600;
     /* para la letra */
     font-size: 20px; 
-    background-color: #BB00EB; 
+    background-color: #26477D; 
     line-height: 50px;  
     padding-right: 35px; 
     text-align: center;
@@ -63,30 +76,73 @@ body{
 }
 
 .form-group .btncreatecv{
-    width:70%;
+    /* width:70%;
     margin: auto;
     margin-bottom: 10px;
     margin-left: -37px;
-
+    text-align: center; */
+    width: 60%;
+    margin: auto;
+    border: solid thin #133453;
+    padding: .7rem;
+    border-radius: 2rem;
+    background-color:#133453;
+    font-weight: 600;
+    margin-top: 1rem;
+    font-size: .8rem;
+    cursor: pointer;
+    color: #ffffff;
+    text-align: center;
 }
+
 .form-group .btnopencv{   
-    width:70%;
+    /* width:70%;
     margin: auto;
     margin-bottom: 10px;
     margin-left: -35px;
+    text-align: center; */
+    width: 60%;
+    margin: auto;
+    border: solid thin #133453;
+    padding: .7rem;
+    border-radius: 2rem;
+    background-color:#133453;
+    font-weight: 600;
+    margin-top: 1rem;
+    font-size: .8rem;
+    cursor: pointer;
+    color: #ffffff;
+    text-align: center;
 
 }
 .logout{
-    /* position: fixed; */
-    right: 50px;
-    top: 25px;
-    position: absolute;
-    
+    position: absolute; 
+    margin-top: 300px;
+    width: 30%;
+    height: 15%;
+    /* margin-left: 12%; */
+    /* background-color: yellow; */
+    text-align: center; 
+    justify-content: center;
+        
 }
 
-.bxs-file-plus{
-    
+.btn {
+    width: 60%;
+    margin: auto;
+    border: solid thin #133453;
+    padding: .7rem;
+    border-radius: 2rem;
+    background-color:#133453;
+    font-weight: 600;
+    margin-top: 1rem;
+    font-size: .8rem;
+    cursor: pointer;
+    color: #ffffff;
+    text-align: center;
 }
+
+
 
 
 

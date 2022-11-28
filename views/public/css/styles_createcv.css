@@ -1,7 +1,15 @@
 body{
-    font-family: sans-serif;
-    margin: 0px;
-
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.0)), url("../img/images.jpg");
+    height: 100vh;
+    align-items: center;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #ffffff;
+    /* display: flex; */
+    justify-content: center;  
+    flex-wrap: wrap;
+    font-family: 'Montserrat', sans-serif;
 }
 
 header{
@@ -40,6 +48,8 @@ header{
     margin: 2.5rem;
     background-color: rgb(51, 51, 51, 0.602);
     text-align: center;
+    border-radius: 10px;
+    margin-left: 16%;
 }
 
 .formulario h2{
@@ -56,15 +66,16 @@ header{
 .buttons button{
     width: 60%;
     margin: auto;
-    border: solid thin #BB00EB;
+    border: solid thin #26477D;
     padding: .5rem;
     border-radius: 2rem;
-    background-color: #BB00EB;
+    background-color: #26477D;
     font-weight: 600;
     margin-top: 1rem;
     font-size: .8rem;
     cursor: pointer;
-    color: #222;
+    color: white;
+    
 }
 
 .buttons{
@@ -74,14 +85,14 @@ header{
 .buttons input{
     width: 60%;
     margin: auto;
-    border: solid thin #BB00EB;
+    border: solid thin #26477D;
     padding: .5rem;
     border-radius: 2rem;
-    background-color: #BB00EB;
+    background-color: #26477D;
     font-weight: 600;
     margin-top: 1rem;
     font-size: .8rem;
     cursor: pointer;
-    color: #222;
+    color: white;
 
 }
