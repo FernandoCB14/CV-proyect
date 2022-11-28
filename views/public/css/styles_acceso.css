@@ -7,7 +7,7 @@
 
 body{
 
-    background-image: url(https://st2.depositphotos.com/3730721/7212/i/600/depositphotos_72123213-stock-photo-womans-hand-writing-on-paper.jpg);
+    background-image:linear-gradient(rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.5)), url("../img/images.jpg");
     /* background-color: #060607; */
     height: 100vh;
     display: flex;
@@ -45,7 +45,7 @@ body{
 .message button {
     padding: 1rem;
     font-weight: 400;
-    background-color:#BB00EB;
+    background-color:#26477D;
     border-radius: 2rem;
     border: none;
     outline: none;
@@ -57,15 +57,17 @@ body{
 }
 
 .message button:hover {
-    background-color: #6464f8;
+    background-color: #26477D;
 }
 
 .formulario {
     width: 400px;
+    height: 570px;
     padding: 1rem;
     margin: 1.5rem;
-    background-color: rgb(51, 51, 51, 0.602);
+    background-color: rgba(39, 39, 39, 0.602);
     text-align: center;
+    border-radius: 10px;
 }
 
 
@@ -95,7 +97,7 @@ body{
 }
 
 .border-icon:hover {
-    background-color: #BB00EB;
+    background-color: #26477D;
     cursor: pointer;
 }
 
@@ -115,21 +117,21 @@ body{
     outline: none;
     padding: .2rem 0;
     font-size: .9rem;
-    color: rgb(243, 243, 245);
+    color: rgb(255, 255, 255);
 }
 
 .formulario button {
     width: 60%;
     margin: auto;
-    border: solid thin #BB00EB;
+    border: solid thin #26477D;
     padding: .7rem;
     border-radius: 2rem;
-    background-color: #BB00EB;
+    background-color: #26477D;
     font-weight: 600;
     margin-top: 1rem;
     font-size: .8rem;
     cursor: pointer;
-    color: #222;
+    color: #ffffff;
 } 
 
 .formulario a{
@@ -142,7 +144,7 @@ body{
 }
 
 a:hover{
-    color: #BB00EB;
+    color: #26477D;
 }
 
 

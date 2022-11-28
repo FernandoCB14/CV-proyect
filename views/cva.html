@@ -9,12 +9,13 @@
     <title>Crear cv</title>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="./users/js/post.js"></script>
+    <link rel="stylesheet" href="../views/public/css/styles_cva.css">
 </head>
 
 <body>
     
-
-    <h1>Crea tu cv con un perfil académico</h1>
+    <form class="formulario">
+        <h1>Crea tu cv con un perfil académico</h1>
     <div class="form-group">
         <label for="input-name">Nombre</label>
         <input type="name" class="form-control" id="input-name" placeholder="******">
@@ -49,7 +50,9 @@
     </div>
     <div class="form-group">
         <label for="input-formacd">formacion academica</label>
-        <input class="form-control" id="input-formacd" placeholder="********** ">
+        <br>
+        <textarea name="formacd" id="input-formacd" cols="50" rows="4"></textarea>
+        <!-- <textarea class="form-control" id="input-formacd" placeholder="********** "> -->
     </div>
     <div class="form-group">
         <label for="input-profexp">experiencia profecional</label>
@@ -71,6 +74,7 @@
         <button id="btn1">Enviar</button>
         <input type="button" value="Regresar" onClick="history.go(-1);">
     </div>
+    </form>
 
 </body>
 
