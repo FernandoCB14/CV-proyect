@@ -13,8 +13,8 @@ function init() {
             }
         }
         // searchid();
-        document.getElementById('btn1').addEventListener('click', searchCvs);
-        document.getElementById('btn2').addEventListener('click', mostrarD);
+        // document.getElementById('btn1').addEventListener('click', searchCvs);
+        // document.getElementById('btn2').addEventListener('click', mostrarD);
         // document.getElementById('btn3').addEventListener('click', update);
         searchCvs();
     } else {
@@ -25,32 +25,12 @@ function init() {
 }
 
 
-function searchid() {
-    let idUsuario = document.getElementById("input-id").value;
-    // const gruposDiv = document.getElementById('datos-usuario');
-    axios.get(url + "/usuarios/" + idUsuario, headers)
-        .then(function (res) {
-            console.log(res.data.message);
-            showData(res.data.message);
-
-        })
-}
-
 function searchCvs() {
     axios.get(url + "/usuarios/cvs", headers)
         .then(function (res) {
             console.log(res.data.message);
             // showData(res.data.message);
             showCards(res.data.message);
-        })
-}
-
-
-function mostrarD() {
-    axios.get(url + "/usuarios/datos", headers)
-        .then(function (res) {
-            showData(res.data.message);
-            console.log(res.data.message);
         })
 }
 
@@ -75,120 +55,113 @@ function showCards(cvs) {
         myCvs.appendChild(div);
         // tarjeta.textContent=div;
 
+        const btnUpdate = document.createElement('button');
+        btnUpdate.className= "btnUpdate";
+        btnUpdate.textContent = "Editar"
+        div.appendChild(btnUpdate);
+
+        btnUpdate.onclick = () => {
+        window.location.href= "edit.html"
+        };
+        // btnUpdate.onclick = update;
+        // datosUsuario.appendChild(btnUpdate);
+
+        const panel = document.createElement('span');
+        panel.className= "<i class='bx bxl-linkedin' ></i>";    
+        panel.textContent="<i class='bx bxl-linkedin' ></i>"
+        div.appendChild(panel);
+
     });
 
-    //-----------------------------------
-
-
-    // const myCvs = document.createElement("div");
-    // myCvs.className= 
-    // document.body.appendChild(myCvs);
-
-
-    // le añado un id al elemento div
-    // const div = document.getElementsByTagName("div")[0];
-    // div.className = "flex-container";
-    // div.id = "my-cvs";
-
-    // const mostrarInfo = cvs.map(function (info) {
-    //     return '<div>'
-    //         + '<h2 class= "titulo">' +info.nombre + '</h2>'
-    //         + '<p class= "cuerpo">' + info.apellido_paterno + '</p>'
-    //         + '<p class= "cuerpo">' + info.apellido_materno+ '</p>'
-    //         + '</div>';
-    // }).join('')
-    // document.getElementById("my-cvs").innerHTML = mostrarInfo;
-
-
-
-
-
-
-
-
-
-    // for (var i = 0; i < cvs.length; i++) {
-    //     myCvs.innerHTML += `<div >
-    //                                     <div class="form-group">
-    //                                         <h3>${cvs[i].nombre} ${cvs[i].apellido_paterno}  ${cvs[i].apellido_materno} </h3>
-    //                                     </div>
-
-    //                         </div>`;
-
-
-    //     // const cuerpo = document.querySelector('cuerpo');
-    //     tarjeta.appendChild(myCvs.innerHTML);
-    //     myCvs.textContent = myCvs.innerHTML;
-
-
-    // }
-
-
-
 
 }
 
+// function searchid() {
+//     let idUsuario = document.getElementById("input-id").value;
+//     // const gruposDiv = document.getElementById('datos-usuario');
+//     axios.get(url + "/usuarios/" + idUsuario, headers)
+//         .then(function (res) {
+//             console.log(res.data.message);
+//             showData(res.data.message);
 
-function showData(usuario) {
-    var datosUsuario = document.getElementById("datos-usuario");
-    for (var i = 0; i < usuario.length; i++) {
-        datosUsuario.innerHTML += `<div >
-                                    <div class="form-group">
-                                        <label for="input-name">Nombre</label>
-                                        <input class="form-control" value=${usuario[i].nombre} id="input-name" placeholder="******">
-                                        <input class="form-control" value = ${usuario[i].apellido_paterno} id="input-ln" placeholder="********** ">
-                                        <input class="form-control" value=${usuario[i].apellido_materno} id="input-mln" placeholder="********** ">
-                                    </div>
-                                    <div >  
-                                        <label for="input-dir">direccion</label>
-                                        <input class="form-control"  value = ${usuario[i].direccion} id="input-dir" placeholder="********** ">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="input-zp">codigo postal</label>
-                                        <input class="form-control" value = ${usuario[i].codigo_postal} id="input-zp" placeholder="********** ">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="input-sta">estado</label>
-                                        <input class="form-control" value = ${usuario[i].estado} id="input-sta" placeholder="********** ">
-                                    </div>
-                                        <label for="input-tnum">número de teléfono</label>
-                                        <input class="form-control"value = ${usuario[i].numero_telefono} id="input-tnum" placeholder="********** ">
-                                    <div class="form-group">
+//         })
+// }
+
+
+
+
+// function mostrarD() {
+//     axios.get(url + "/usuarios/datos", headers)
+//         .then(function (res) {
+//             showData(res.data.message);
+//             console.log(res.data.message);
+//         })
+// }
+
+
+
+
+
+// function showData(usuario) {
+//     var datosUsuario = document.getElementById("datos-usuario");
+//     for (var i = 0; i < usuario.length; i++) {
+//         datosUsuario.innerHTML += `<div >
+//                                     <div class="form-group">
+//                                         <label for="input-name">Nombre</label>
+//                                         <input class="form-control" value=${usuario[i].nombre} id="input-name" placeholder="******">
+//                                         <input class="form-control" value = ${usuario[i].apellido_paterno} id="input-ln" placeholder="********** ">
+//                                         <input class="form-control" value=${usuario[i].apellido_materno} id="input-mln" placeholder="********** ">
+//                                     </div>
+//                                     <div >  
+//                                         <label for="input-dir">direccion</label>
+//                                         <input class="form-control"  value = ${usuario[i].direccion} id="input-dir" placeholder="********** ">
+//                                     </div>
+//                                     <div class="form-group">
+//                                         <label for="input-zp">codigo postal</label>
+//                                         <input class="form-control" value = ${usuario[i].codigo_postal} id="input-zp" placeholder="********** ">
+//                                     </div>
+//                                     <div class="form-group">
+//                                         <label for="input-sta">estado</label>
+//                                         <input class="form-control" value = ${usuario[i].estado} id="input-sta" placeholder="********** ">
+//                                     </div>
+//                                         <label for="input-tnum">número de teléfono</label>
+//                                         <input class="form-control"value = ${usuario[i].numero_telefono} id="input-tnum" placeholder="********** ">
+//                                     <div class="form-group">
                                        
-                                    </div>
+//                                     </div>
 
-                                    <div class="form-group">
-                                        <label for="input-mail">correo electronico</label>
-                                        <input class="form-control" value = ${usuario[i].correo_electronico} id="input-mail" placeholder="********** ">
-                                    </div>
-                                    <div class="form-group">
-                                    </div>`;
+//                                     <div class="form-group">
+//                                         <label for="input-mail">correo electronico</label>
+//                                         <input class="form-control" value = ${usuario[i].correo_electronico} id="input-mail" placeholder="********** ">
+//                                     </div>
+//                                     <div class="form-group">
+//                                     </div>`;
 
-    }
+//     }
 
-    const limpiarDivButton = document.createElement('button');
-    limpiarDivButton.textContent = "Limpiar";
+//     const limpiarDivButton = document.createElement('button');
+//     limpiarDivButton.textContent = "Limpiar";
 
-    limpiarDivButton.onclick = () => {
-        datosUsuario.innerHTML = "";
-    };
-    datosUsuario.appendChild(limpiarDivButton);
+//     limpiarDivButton.onclick = () => {
+//         datosUsuario.innerHTML = "";
+//     };
+//     datosUsuario.appendChild(limpiarDivButton);
 
-    const btnUpdate = document.createElement('button');
-    btnUpdate.textContent = "Actualizar"
-    btnUpdate.onclick = update;
-    datosUsuario.appendChild(btnUpdate);
+//     const btnUpdate = document.createElement('button');
+//     btnUpdate.textContent = "Actualizar"
+//     btnUpdate.onclick = update;
+//     datosUsuario.appendChild(btnUpdate);
 
-    const btnA = document.createElement('button');
-    btnA.textContent = "Datos académicos";
+//     const btnA = document.createElement('button');
+//     btnA.textContent = "Datos académicos";
 
-    // btnA.onclick = showDataA
+//     // btnA.onclick = showDataA
 
-    datosUsuario.appendChild(btnA);
+//     datosUsuario.appendChild(btnA);
 
 
 
-}
+// }
 
 //PUT 
 
