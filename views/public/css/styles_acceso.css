@@ -21,7 +21,7 @@ body{
 
 .container-form {
     width: 90%;
-    height: 90vh;
+    /* height: 90vh; */
     display: flex;
     justify-content: space-around;
     transition:  all .5s ease-out;
@@ -54,6 +54,8 @@ body{
     margin-top: 2rem;
     transition: all .3s ease-in;
     color: #fff;
+
+  
 }
 
 .message button:hover {
@@ -121,17 +123,19 @@ body{
 }
 
 .formulario button {
-    width: 60%;
     margin: auto;
-    border: solid thin #26477D;
-    padding: .7rem;
+    width: 60%;
+    padding: 1rem;
+    font-weight: 400;
+    background-color:#26477D;
     border-radius: 2rem;
-    background-color: #26477D;
-    font-weight: 600;
-    margin-top: 1rem;
-    font-size: .8rem;
+    border: none;
+    outline: none;
     cursor: pointer;
-    color: #ffffff;
+    font-size: .9rem;
+    /* margin-top: 2rem; */
+    transition: all .3s ease-in;
+    color: #fff;
 } 
 
 .formulario a{
