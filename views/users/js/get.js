@@ -16,7 +16,15 @@ function init() {
         // document.getElementById('btn1').addEventListener('click', searchCvs);
         // document.getElementById('btn2').addEventListener('click', mostrarD);
         // document.getElementById('btn3').addEventListener('click', update);
-        searchCvs();
+
+        document.addEventListener("DOMContentLoaded",  searchCvs());
+
+        // window.document.addEventListener('DOMContentLoaded', ()=>{
+        //     console.log("Holi");
+        //     searchCvs();
+        // })
+
+         
     } else {
         window.location.href = "login.html";
     }
@@ -37,42 +45,64 @@ function searchCvs() {
 
 function showCards(cvs) {
 
-    const myCvs = document.getElementById('my-cvs');
+
+    const items = document.getElementById('my-cvs')
+    const templateCard= document.getElementById('template-card').content
+    const fragment = document.createDocumentFragment();
+
+   
+
+    // const myCvs = document.getElementById('my-cvs');
+    // const fragment = document.createDocumentFragment();
     // const tarjeta = document.querySelector('tarjeta');
 
 
     cvs.forEach((item, index) => {
+        templateCard.querySelector('h1').textContent= item.nombre;
+        templateCard.querySelector('h5').textContent= item.apellido_materno;  
+        const clone= templateCard.cloneNode(true);
+        fragment.appendChild(clone);
+
+    });
+    items.appendChild(fragment);
+    
         // const tarjeta= document.createElement('div');
         // tarjeta.className='tarjeta';
 
-        const div = document.createElement('div');
-        div.className = `cv-card`;
-        div.id = `cv-card${index + 1}`;
+    //     const div = document.createElement('div');
+    //     div.className = `cv-card`;
+    //     div.id = `cv-card${index + 1}`;
 
-        div.innerHTML = `<h2 class= "titulo">${item.nombre}</h2> 
-                         ${item.apellido_paterno}  
-                         ${item.apellido_materno}`;
-        myCvs.appendChild(div);
-        // tarjeta.textContent=div;
+    //     div.innerHTML = `<h2 class= "titulo">${item.nombre}</h2> 
+    //                      ${item.apellido_paterno}  
+    //                      ${item.apellido_materno}`;
+    //     fragment.appendChild(div);
+    //     // tarjeta.textContent=div;
 
-        const btnUpdate = document.createElement('button');
-        btnUpdate.className= "btnUpdate";
-        btnUpdate.textContent = "Editar"
-        div.appendChild(btnUpdate);
 
-        btnUpdate.onclick = () => {
-        window.location.href= "edit.html"
-        };
-        // btnUpdate.onclick = update;
-        // datosUsuario.appendChild(btnUpdate);
+    //     const pie=document.createElement("div");
+    //     pie.className= "pie"
+    //     const btnUpdate = document.createElement('button');
+    //     btnUpdate.className= "btn-update";
+    //     btnUpdate.textContent = "Editar"
+    //     div.appendChild(pie);
+    //     pie.appendChild(btnUpdate);
 
-        const panel = document.createElement('span');
-        panel.className= "<i class='bx bxl-linkedin' ></i>";    
-        panel.textContent="<i class='bx bxl-linkedin' ></i>"
-        div.appendChild(panel);
+    //     btnUpdate.onclick = () => {
+    //     window.location.href= "edit.html"
+    //     };
 
-    });
+    //     // btnUpdate.onclick = update;
+    //     // datosUsuario.appendChild(btnUpdate);
 
+    //     const btnDelete = document.createElement('button');
+    //     btnUpdate.className= "btn-delate";
+    //     btnUpdate.textContent = "Borrar"
+    //     // pie.appendChild(btnDelete);
+
+
+    // });
+    // myCvs.appendChild(fragment);
 
 }
 
