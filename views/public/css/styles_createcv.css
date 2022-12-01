@@ -64,7 +64,7 @@ header{
 }
 
 .buttons button{
-    width: 60%;
+    width: 40%;
     margin: auto;
     border: solid thin #26477D;
     padding: .5rem;
@@ -80,10 +80,11 @@ header{
 
 .buttons{
     margin-top: -20%;
+    
 }
 
 .buttons input{
-    width: 60%;
+    width: 40%;
     margin: auto;
     border: solid thin #26477D;
     padding: .5rem;
