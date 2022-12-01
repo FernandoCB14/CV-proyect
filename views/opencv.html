@@ -8,13 +8,65 @@
     <title>Open CV </title>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="./users/js/get.js"></script>
-    <link rel="stylesheet" href="../views/public/css/cva.css">
+    <link rel="stylesheet" href="">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
 </head>
 
 <body>
-
-
     <h1>Aqui esté el CV ya hecho</h1>
+
+    <div class="contaner">
+        <div id="my-cvs"></div>
+
+    </div>
+   
+    <template id="template-card">      
+        <div class="tarjeta">
+            <div class="card-body">
+                <h1 class="titulo"></h1>
+                <h5></h5>
+                <button class="btn-editar">Editar</button>
+                <button class="btn-editar">Borrar</button>
+            </div>
+        </div>
+    </template>
+
+    <!-- <div class="form-group">
+        <label for="input-id">Consultar por id</label>
+        <input class="form-control" id="input-id" placeholder="***********">
+    </div> -->
+
+    <!-- <div id="datos-usuario"></div> -->
+
+
+
+    <!-- <div id="my-cvs">
+
+    </div>
+
+
+    <div class="tarjeta">
+        
+        <div id="buttons">
+            <input type="button" value="Regresar" onClick="history.go(-1);">
+            <input type="submit" value="Imprime tu cv" class="btn btn-block imprime" onClick="window.print()">
+        </div>
+
+    
+        <div id="datos-usuario"></div>
+    
+        <!-- <button onclick="muestraMisGrupos()"> Enseña usuarios</button> -->
+    
+       
+        <div class="d-flex justify-content-between">
+            <button id="btn1">Consultar</button>
+            <!-- <button id="btn2">Mostrar</button> -->
+            <!-- <button id="btn3">Actualizar</button> -->
+            
+    <header>
+        <h1>Aqui esté el CV ya hecho</h1>
+    </header> 
     <!-- <div class="form-group">
         <label for="input-id">Consultar por id</label>
         <input class="form-control" id="input-id" placeholder="***********">
@@ -28,23 +80,8 @@
         <div class="buttons">
             <button id="btn1">consultar</button>
             <button id="btn2">mostrar</button>
-            <input type="button" value="Regresar" onClick="history.go(-1);">
-            <input type="submit" value="Imprime tu cv" class="btn btn-block imprime" onClick="window.print()">
-    
-        </div>
 
     </div>
-    
-
-    
-    
-
-
-
-
-
-
-
 
 </body>
 
