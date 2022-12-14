@@ -17,21 +17,21 @@ function init() {
         // document.getElementById('btn2').addEventListener('click', mostrarD);
         // document.getElementById('btn3').addEventListener('click', update);
 
-        document.addEventListener("DOMContentLoaded",  searchCvs());
+        // document.getElementById('btn-delete').addEventListener('click', deleteCv);
+        
+        // document.addEventListener("DOMContentLoaded", searchCvs());
 
-        // window.document.addEventListener('DOMContentLoaded', ()=>{
-        //     console.log("Holi");
-        //     searchCvs();
+        // mycvs.addEventListener('click', e=>{
+        //     deleteCv(e); 
         // })
 
-         
+        searchCvs();
+
+
     } else {
         window.location.href = "login.html";
     }
-
-
 }
-
 
 function searchCvs() {
     axios.get(url + "/usuarios/cvs", headers)
@@ -46,152 +46,53 @@ function searchCvs() {
 function showCards(cvs) {
 
 
-    const items = document.getElementById('my-cvs')
-    const templateCard= document.getElementById('template-card').content
+    const items = document.getElementById('mycvs')
+    // const templateCard = document.getElementById('template-card').content
     const fragment = document.createDocumentFragment();
 
-   
-
-    // const myCvs = document.getElementById('my-cvs');
-    // const fragment = document.createDocumentFragment();
-    // const tarjeta = document.querySelector('tarjeta');
 
 
-    cvs.forEach((item, index) => {
-        templateCard.querySelector('h1').textContent= item.nombre;
-        templateCard.querySelector('h5').textContent= item.apellido_materno;  
-        const clone= templateCard.cloneNode(true);
-        fragment.appendChild(clone);
-
-    });
-    items.appendChild(fragment);
-    
-        // const tarjeta= document.createElement('div');
-        // tarjeta.className='tarjeta';
-
-    //     const div = document.createElement('div');
-    //     div.className = `cv-card`;
-    //     div.id = `cv-card${index + 1}`;
-
-    //     div.innerHTML = `<h2 class= "titulo">${item.nombre}</h2> 
-    //                      ${item.apellido_paterno}  
-    //                      ${item.apellido_materno}`;
-    //     fragment.appendChild(div);
-    //     // tarjeta.textContent=div;
+    // // const myCvs = document.getElementById('my-cvs');
+    // // const fragment = document.createDocumentFragment();
+    // // const tarjeta = document.querySelector('tarjeta');
 
 
-    //     const pie=document.createElement("div");
-    //     pie.className= "pie"
-    //     const btnUpdate = document.createElement('button');
-    //     btnUpdate.className= "btn-update";
-    //     btnUpdate.textContent = "Editar"
-    //     div.appendChild(pie);
-    //     pie.appendChild(btnUpdate);
-
-    //     btnUpdate.onclick = () => {
-    //     window.location.href= "edit.html"
-    //     };
-
-    //     // btnUpdate.onclick = update;
-    //     // datosUsuario.appendChild(btnUpdate);
-
-    //     const btnDelete = document.createElement('button');
-    //     btnUpdate.className= "btn-delate";
-    //     btnUpdate.textContent = "Borrar"
-    //     // pie.appendChild(btnDelete);
-
+    // cvs.forEach((item, index) => {
+    //     templateCard.querySelector('h1').textContent = item.nombre;
+    //     templateCard.querySelector('h5').textContent = item.apellido_materno;
+    //     templateCard.querySelector('.btn-delete').dataset= item.id;
+    //     const clone = templateCard.cloneNode(true);
+    //     fragment.appendChild(clone);
 
     // });
-    // myCvs.appendChild(fragment);
+    // items.appendChild(fragment);
+
+    //sin templates
+
+    cvs.forEach((item, index) => {
+    const tarjeta= document.createElement('div');
+    tarjeta.className='tarjeta';
+
+        const div = document.createElement('div');
+        div.className = `cv-card`;
+        div.id = `cv-card${index + 1}`;
+
+        div.innerHTML = `<h2 class= "titulo">${item.nombre}</h2> 
+                         ${item.apellido_paterno}  
+                         ${item.apellido_materno}
+                         <div class="dropdown">
+                         <button><i class='bx bx-list-ul'></i></button>
+                         <div class="dropdown-content"> 
+                             <a rel="noopener" target="_blank" href="editcva.html">Editar</a> 
+                             <a rel="noopener" target="_blank" onClick="deleteCv (${item.id_usuario})">Eliminar</a>
+                             <a rel="noopener" target="_blank" onClick="window.print()">Imprimir</a>
+                         </div>
+                     </div>`;
+        fragment.appendChild(div);
+    });
+    items.appendChild(fragment);
 
 }
-
-// function searchid() {
-//     let idUsuario = document.getElementById("input-id").value;
-//     // const gruposDiv = document.getElementById('datos-usuario');
-//     axios.get(url + "/usuarios/" + idUsuario, headers)
-//         .then(function (res) {
-//             console.log(res.data.message);
-//             showData(res.data.message);
-
-//         })
-// }
-
-
-
-
-// function mostrarD() {
-//     axios.get(url + "/usuarios/datos", headers)
-//         .then(function (res) {
-//             showData(res.data.message);
-//             console.log(res.data.message);
-//         })
-// }
-
-
-
-
-
-// function showData(usuario) {
-//     var datosUsuario = document.getElementById("datos-usuario");
-//     for (var i = 0; i < usuario.length; i++) {
-//         datosUsuario.innerHTML += `<div >
-//                                     <div class="form-group">
-//                                         <label for="input-name">Nombre</label>
-//                                         <input class="form-control" value=${usuario[i].nombre} id="input-name" placeholder="******">
-//                                         <input class="form-control" value = ${usuario[i].apellido_paterno} id="input-ln" placeholder="********** ">
-//                                         <input class="form-control" value=${usuario[i].apellido_materno} id="input-mln" placeholder="********** ">
-//                                     </div>
-//                                     <div >  
-//                                         <label for="input-dir">direccion</label>
-//                                         <input class="form-control"  value = ${usuario[i].direccion} id="input-dir" placeholder="********** ">
-//                                     </div>
-//                                     <div class="form-group">
-//                                         <label for="input-zp">codigo postal</label>
-//                                         <input class="form-control" value = ${usuario[i].codigo_postal} id="input-zp" placeholder="********** ">
-//                                     </div>
-//                                     <div class="form-group">
-//                                         <label for="input-sta">estado</label>
-//                                         <input class="form-control" value = ${usuario[i].estado} id="input-sta" placeholder="********** ">
-//                                     </div>
-//                                         <label for="input-tnum">número de teléfono</label>
-//                                         <input class="form-control"value = ${usuario[i].numero_telefono} id="input-tnum" placeholder="********** ">
-//                                     <div class="form-group">
-                                       
-//                                     </div>
-
-//                                     <div class="form-group">
-//                                         <label for="input-mail">correo electronico</label>
-//                                         <input class="form-control" value = ${usuario[i].correo_electronico} id="input-mail" placeholder="********** ">
-//                                     </div>
-//                                     <div class="form-group">
-//                                     </div>`;
-
-//     }
-
-//     const limpiarDivButton = document.createElement('button');
-//     limpiarDivButton.textContent = "Limpiar";
-
-//     limpiarDivButton.onclick = () => {
-//         datosUsuario.innerHTML = "";
-//     };
-//     datosUsuario.appendChild(limpiarDivButton);
-
-//     const btnUpdate = document.createElement('button');
-//     btnUpdate.textContent = "Actualizar"
-//     btnUpdate.onclick = update;
-//     datosUsuario.appendChild(btnUpdate);
-
-//     const btnA = document.createElement('button');
-//     btnA.textContent = "Datos académicos";
-
-//     // btnA.onclick = showDataA
-
-//     datosUsuario.appendChild(btnA);
-
-
-
-// }
 
 //PUT 
 
@@ -241,6 +142,58 @@ function update() {
         console.log(err);
     });
 }
+
+
+function deleteCv(id){
+    axios({
+            method: 'delete',
+            url: 'http://localhost:8081/usuarios/' + id,
+            date:{
+                id_usuario: id
+            },
+            headers: {
+                'Authorization': "bearer " + localStorage.getItem("token"),
+            }
+      })
+      .then(function (res) {
+        location.reload();
+      })
+      .catch(function (err) {
+        console.log(err);
+      });
+  };
+
+// function deleteCv() {
+
+//     // console.log(e.target.classList.contains('btn-delete'));
+//     // const templateCard = document.getElementById('template-card').content
+//     // var id = templateCard.getElementById('btn-delete').value;
+//     if(e.target.classList.contains('btn-delete')){
+//         console.log(e.target.parentElement);
+//         axios({
+//                 method: 'delete',
+//                 url: 'http://localhost:8081/usuarios/id' + id,
+//                 date:{
+//                     id_usuario: id
+//                 },
+//                 headers: {
+//                     'Authorization': "bearer " + localStorage.getItem("token"),
+//                 }
+//             }).then(function (res) {
+//                 if (res.data.code === 200) {
+//                     console.log(res.data.message);
+//                     alert("CV eliminado");
+//                 } else {
+//                     alert("Algo salió mal");
+//                 }
+//             }).catch(function (err) {
+//                 console.log(err);
+//             });
+
+//     }
+//     e.stopPropagation();
+// }
+
 
 
 
