@@ -1,19 +1,29 @@
+const { Router } = require('express');
 const express = require('express');
 const usuarios = express.Router();
 const db = require('../models/database');
 
 
-usuarios.get('/datos', async (req, res) => {
-    const id_usuario = req.user.user_id;
-    console.log(id_usuario);
+usuarios.get('/:id([0-9]{1,3})', async (req, res) => {
+    const id = req.params.id_usuario - 1;
+    console.log(id);
 
     try {
-        const usuario = await db.query("SELECT * from perfil_general ");
-        return res.status(200).json({ code: 200, message: usuario });
+        const usuario = await db.query("SELECT * from perfil_general");
+        return res.status(200).json({ code: 200, message: usuario[id] });
     } catch (error) {
         return res.status(500).json({ code: 500, message: error });
     }
+});
 
+//Consultar los cvs del usuario actual
+usuarios.get('/cvs', async (req, res) => {
+    const id_usuario = req.user.user_id;
+    console.log(id_usuario);
+    let query= `SELECT * FROM perfil_general WHERE user_id = ${id_usuario}`;
+    console.log(query);
+    const emp = await db.query(query);
+    return res.status(200).json({ code: 200, message: emp });
 });
 
 usuarios.post("/insert", async (req, res, next) => {
@@ -26,7 +36,6 @@ usuarios.post("/insert", async (req, res, next) => {
     console.log(id_usuario);
     console.log(req.body);
     if (req.body.keys !== null || undefined && req.body.values !== null || undefined) {
-        console.log('hola');
         let query = "INSERT INTO perfil_general(nombre, apellido_paterno, apellido_materno, direccion, codigo_postal,estado, correo_electronico, numero_telefono, formacion_academica, experiencia_profesional, idiomas_domina, user_id)";
         query += `VALUES(
             '${nombre}',
@@ -59,8 +68,6 @@ usuarios.post("/insert", async (req, res, next) => {
     return res.status(500).json({ code: 500, message: "Campos incompletos" });
 });
 
-
-
 usuarios.put("/:id([0-9]{1,3})", async (req, res, next) => {
 
     const { nombre, apellido_paterno, apellido_materno, direccion, codigo_postal, estado,
@@ -85,7 +92,7 @@ usuarios.put("/:id([0-9]{1,3})", async (req, res, next) => {
 
 usuarios.delete("/:id([0-9]{1,3})", async (req, res, next) => {
 
-    const query = `DELETE FROM perfil_general WHERE id_usuario = ${req.params.id} `;
+    const query = `DELETE FROM perfil_general WHERE id_usuario=${req.params.id}`;
     const rows = await db.query(query);
 
     if (rows.affectedRows == 1) {
@@ -94,19 +101,7 @@ usuarios.delete("/:id([0-9]{1,3})", async (req, res, next) => {
     return res.status(404).json({ code: 404, message: "Usuario no encontrado" });
 });
 
-//Consultar los cvs del usuario actual
-usuarios.get('/cvs', async (req, res) => {
-    const id_usuario = req.user.user_id;
-    console.log(id_usuario);
-    // const id = req.params.id;
-    let query= `SELECT * FROM perfil_general WHERE user_id = ${id_usuario}`;
-    console.log(query);
-    const emp = await db.query(query);
-    return res.status(200).json({ code: 200, message: emp });
 
-
-
-});
 
 
 //[A-Za-z]+) sirve para que acepte texto de cualquier tipo 
@@ -128,11 +123,27 @@ usuarios.get('/:mail(([a-zA-Z]*(%20)?){1,5})', async (req, res, next) => {
 });
 
 
-// router.app.pach('/', (req, res)=> {
-//     res.json({
-//         msg:'patch api'
-//     });
-//     });
+// usuarios.patch("/:id([0-9]{1,3})", async (req, res, next) => {
+//     const { nombre, apellido_paterno, apellido_materno, direccion, codigo_postal, estado,
+//         correo_electronico, numero_telefono, formacion_academica, experiencia_profesional, idiomas_domina } = req.body;
+  
+//         if (req.body.keys !== null || undefined && req.body.values !== null || undefined) {
+//             let query = `UPDATE perfil_general SET nombre='${nombre}', apellido_paterno='${apellido_paterno}',`;
+//             query += `apellido_materno='${apellido_materno}', direccion='${direccion}',codigo_postal= '${codigo_postal}',`;
+//             query += `estado='${estado}',correo_electronico ='${correo_electronico}', numero_telefono='${numero_telefono}', formacion_academica='${formacion_academica}', experiencia_profesional='${experiencia_profesional}', idiomas_domina='${idiomas_domina}' WHERE id_usuario = ${req.params.id};`;
+//             const rows = await db.query(query);
+    
+  
+//       if (rows.affectedRows == 1) {
+//         return res
+//           .status(200)
+//           .json({ code: 200, message: "Empleado actualizado correctamente" });
+//       }
+//       return res.status(500).json({ code: 500, message: "Campos incompletos" });
+//     }
+  
+//     return res.status(500).json({ code: 500, message: "No existe el Empleado" });
+//   });
 
 
 
