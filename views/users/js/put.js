@@ -19,9 +19,11 @@ function init(){
     }    
       
 }
-function searchCvs() {
-    axios.get(url + "/usuarios/cvs", headers)
+function searchCvs(id_usuario) {
+   
+    axios.get(url + "/usuarios/" + id_usuario ,headers)
         .then(function (res) {
+            console.log( localStorage.getItem("id", res.data.message));
             console.log(res.data.message);
             showData(res.data.message);
            

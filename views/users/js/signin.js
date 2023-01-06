@@ -35,8 +35,6 @@ function signin(){
             window.location.href = "info.html";
             console.log(res);
             // window.location.href="login.html";
-            
-
         }
     }).catch(function(err){
         console.log(err);
