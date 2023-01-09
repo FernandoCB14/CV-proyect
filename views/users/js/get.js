@@ -74,8 +74,8 @@ function showCards(cvs) {
                          <div class="dropdown">
                          <button><i class='bx bx-list-ul'></i></button>
                          <div class="dropdown-content"> 
-                             <a rel="noopener" target="_blank" onClick="update (${item.id_usuario})">Editar</a> 
-                             <a rel="noopener" target="_blank" onClick="deleteCv (${item.id_usuario})">Eliminar</a>
+                             <a rel="noopener" target="_blank" onClick="update(${item.id_usuario})">Editar</a> 
+                             <a rel="noopener" target="_blank" onClick="deleteCv(${item.id_usuario})">Eliminar</a>
                              <a rel="noopener" target="_blank" onClick="window.print()">Imprimir</a>
                          </div>
                      </div>`;
@@ -106,8 +106,8 @@ function deleteCv(id) {
 }; 
 
 
-function update() {
-
+function update(id) {
+    localStorage.setItem("id", id)
     window.location= "editcva.html"
 }
 

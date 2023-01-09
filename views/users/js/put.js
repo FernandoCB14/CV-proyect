@@ -19,11 +19,10 @@ function init(){
     }    
       
 }
-function searchCvs(id_usuario) {
-   
-    axios.get(url + "/usuarios/" + id_usuario ,headers)
+function searchCvs() {
+    id_usuario = localStorage.getItem("id")
+    axios.get(url + "/Pacademic/" + id_usuario ,headers)
         .then(function (res) {
-            console.log( localStorage.getItem("id", res.data.message));
             console.log(res.data.message);
             showData(res.data.message);
            
@@ -92,9 +91,9 @@ function showData(usuario) {
 }
 
 
-function update(){
+function update(id){
 
-    var id = document.getElementById('input-id').value;
+    // var id = document.getElementById('input-id').value;
     var name = document.getElementById('input-name').value;
     var last_name= document.getElementById('input-ln').value;
     var mlast_name= document.getElementById('input-mln').value;
@@ -109,7 +108,7 @@ function update(){
     
     axios({
         method: 'put',
-        url:'http://localhost:8081/usuarios/' + id, 
+        url:'http://localhost:8081/Pacademic/' + id, 
         data:{
             id_usuario:id,
             nombre: name,

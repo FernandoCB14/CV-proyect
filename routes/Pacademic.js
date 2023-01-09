@@ -5,7 +5,7 @@ const db = require('../models/database');
 
 
 academic.get("/:id([0-9]{1,3})", async (req, res, next) => {
-    const emp= await db.query(`SELECT * FROM perfil_general WHERE usuario_id = ${req.params.id}`);
+    const emp= await db.query(`SELECT * FROM perfil_general WHERE id_usuario = ${req.params.id}`);
     const id = req.params.id - 1;
     try {
       return res.status(200).json({ code: 200, message: emp });
