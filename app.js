@@ -1,11 +1,13 @@
 const express = require('express');
 const morgan=require('morgan');
 const app = express();
-const usuarios= require('./routes/usuarios');
+const academic= require('./routes/Pacademic');
+const profesional = require('./routes/Pprofesional');
 const user = require("./routes/user");
 const auth = require('./middlewares/auth');
 const notfound= require("./middlewares/notFound");
 const cors= require("./middlewares/cors");
+
 
 app.use(cors);
 app.use(morgan('dev'));
@@ -19,8 +21,10 @@ app.get("/",(req, res, next) =>{
 app.use("/user", user)
 app.use(auth);
 
-app.use("/usuarios", usuarios);
+app.use("/Pacademic", academic);
+app.use("/Pprofesional", profesional);
 app.use(notfound);
+
 
 app.listen(process.env.PORT || 8081,()=>{
     console.log('Server is runing');

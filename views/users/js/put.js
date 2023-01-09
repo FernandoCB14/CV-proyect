@@ -20,7 +20,8 @@ function init(){
       
 }
 function searchCvs() {
-    axios.get(url + "/usuarios/cvs", headers)
+    id_usuario = localStorage.getItem("id")
+    axios.get(url + "/Pacademic/" + id_usuario ,headers)
         .then(function (res) {
             console.log(res.data.message);
             showData(res.data.message);
@@ -53,10 +54,6 @@ function showData(usuario) {
                                         <label for="input-tnum">número de teléfono</label>
                                         <input class="form-control"value = ${usuario[i].numero_telefono} id="input-tnum" placeholder="********** ">
                                     <div class="form-group">
-
-                                    </div>
-
-                                    <div class="form-group">
                                         <label for="input-mail">correo electronico</label>
                                         <input class="form-control" value = ${usuario[i].correo_electronico} id="input-mail" placeholder="********** ">
                                     </div>
@@ -85,14 +82,12 @@ function showData(usuario) {
 
     datosUsuario.appendChild(btnA);
 
-
-
 }
 
 
-function update(){
+function update(id){
 
-    var id = document.getElementById('input-id').value;
+    // var id = document.getElementById('input-id').value;
     var name = document.getElementById('input-name').value;
     var last_name= document.getElementById('input-ln').value;
     var mlast_name= document.getElementById('input-mln').value;
@@ -107,7 +102,7 @@ function update(){
     
     axios({
         method: 'put',
-        url:'http://localhost:8081/usuarios/' + id, 
+        url:'http://localhost:8081/Pacademic/' + id, 
         data:{
             id_usuario:id,
             nombre: name,
