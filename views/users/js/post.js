@@ -11,7 +11,8 @@ function init(){
         }
         // console.log(headers);
         // searchid();
-        document.getElementById('btn1').addEventListener('click', newdata);  
+        document.getElementById('btn1').addEventListener('click', newdataA);  
+        document.getElementById('btn1').addEventListener('click', newdataP); 
         // document.getElementById('btn2').addEventListener('click', searchname);  
     }else{
         window.location.href="login.html";   
@@ -20,7 +21,7 @@ function init(){
 }
 
 
-function newdata(){
+function newdataA(){
     var name = document.getElementById('input-name').value;
     var last_name= document.getElementById('input-ln').value;
     var mlast_name= document.getElementById('input-mln').value;
@@ -37,7 +38,7 @@ function newdata(){
     
     axios({
         method: 'post',
-        url:'http://localhost:8081/usuarios/insert',
+        url:'http://localhost:8081/Pacademic/insert',
         data:{
             nombre: name,
             apellido_paterno: last_name,
@@ -59,6 +60,56 @@ function newdata(){
     }).then(function (res){
         if(res.data.code ===200){
             alert("Datos creados");
+            // window.location.href="info.html";  
+        }else{
+            alert("Algo salió mal");
+        }
+    }).catch(function(err){
+        console.log(err);
+    });
+}
+
+function newdataP(){
+    var name = document.getElementById('input-name').value;
+    var last_name= document.getElementById('input-ln').value;
+    var mlast_name= document.getElementById('input-mln').value;
+    var direc= document.getElementById('input-dir').value;
+    var zp= document.getElementById('input-zp').value;
+    var state= document.getElementById('input-sta').value;
+    var mail= document.getElementById('input-mail').value;
+    var Tnum= document.getElementById('input-tnum').value;
+    var formacd= document.getElementById('input-formacd').value;
+    var profexp= document.getElementById('input-profexp').value;
+    var idioms= document.getElementById('input-idioms').value;
+    var Pdescription=  document.getElementById('input-profdesc').value;
+    var Phabilities=  document.getElementById('input-profhabi').value;
+    
+    axios({
+        method: 'post',
+        url:'http://localhost:8081/Pprofesional/insert',
+        data:{
+            nombre: name,
+            apellido_paterno: last_name,
+            apellido_materno: mlast_name,
+            direccion: direc,
+            codigo_postal: zp,
+            estado:state,
+            correo_electronico: mail,
+            numero_telefono: Tnum,
+            formacion_academica: formacd,
+            experiencia_profesional: profexp,
+            idiomas_domina: idioms,
+            descripcion_profesional:Pdescription,
+            habilidades_profesional:Phabilities
+            
+        },
+        headers:{
+            'Authorization': "bearer " + localStorage.getItem("token"),
+        }
+    }).then(function (res){
+        if(res.data.code ===200){
+            alert("Datos creados");
+            // window.location.href="info.html";  
         }else{
             alert("Algo salió mal");
         }

@@ -1,23 +1,21 @@
 const { Router } = require('express');
 const express = require('express');
-const usuarios = express.Router();
+const academic = express.Router();
 const db = require('../models/database');
 
 
-usuarios.get('/:id([0-9]{1,3})', async (req, res) => {
-    const id = req.params.id_usuario - 1;
-    console.log(id);
-
+academic.get("/:id([0-9]{1,3})", async (req, res, next) => {
+    const emp= await db.query(`SELECT * FROM perfil_general WHERE id_usuario = ${req.params.id}`);
+    const id = req.params.id - 1;
     try {
-        const usuario = await db.query("SELECT * from perfil_general");
-        return res.status(200).json({ code: 200, message: usuario[id] });
+      return res.status(200).json({ code: 200, message: emp });
     } catch (error) {
-        return res.status(500).json({ code: 500, message: error });
+      return res.status(404).json({ code: 404, message: "Empleado no encontrado" });
     }
-});
+  });
 
 //Consultar los cvs del usuario actual
-usuarios.get('/cvs', async (req, res) => {
+academic.get('/cvs', async (req, res) => {
     const id_usuario = req.user.user_id;
     console.log(id_usuario);
     let query= `SELECT * FROM perfil_general WHERE user_id = ${id_usuario}`;
@@ -26,7 +24,7 @@ usuarios.get('/cvs', async (req, res) => {
     return res.status(200).json({ code: 200, message: emp });
 });
 
-usuarios.post("/insert", async (req, res, next) => {
+academic.post("/insert", async (req, res, next) => {
 
     //TODOS: hacer insert en dos trablas
     // const id_usuario = req.user;
@@ -68,7 +66,7 @@ usuarios.post("/insert", async (req, res, next) => {
     return res.status(500).json({ code: 500, message: "Campos incompletos" });
 });
 
-usuarios.put("/:id([0-9]{1,3})", async (req, res, next) => {
+academic.put("/:id([0-9]{1,3})", async (req, res, next) => {
 
     const { nombre, apellido_paterno, apellido_materno, direccion, codigo_postal, estado,
         correo_electronico, numero_telefono, formacion_academica, experiencia_profesional, idiomas_domina } = req.body;
@@ -90,7 +88,7 @@ usuarios.put("/:id([0-9]{1,3})", async (req, res, next) => {
 
 });
 
-usuarios.delete("/:id([0-9]{1,3})", async (req, res, next) => {
+academic.delete("/:id([0-9]{1,3})", async (req, res, next) => {
 
     const query = `DELETE FROM perfil_general WHERE id_usuario=${req.params.id}`;
     const rows = await db.query(query);
@@ -101,11 +99,8 @@ usuarios.delete("/:id([0-9]{1,3})", async (req, res, next) => {
     return res.status(404).json({ code: 404, message: "Usuario no encontrado" });
 });
 
-
-
-
 //[A-Za-z]+) sirve para que acepte texto de cualquier tipo 
-usuarios.get('/:mail(([a-zA-Z]*(%20)?){1,5})', async (req, res, next) => {
+academic.get('/:mail(([a-zA-Z]*(%20)?){1,5})', async (req, res, next) => {
     // const id_usuario = req.user;
     // console.log(id_usuario);
     const mail = req.params.mail;
@@ -123,7 +118,8 @@ usuarios.get('/:mail(([a-zA-Z]*(%20)?){1,5})', async (req, res, next) => {
 });
 
 
-// usuarios.patch("/:id([0-9]{1,3})", async (req, res, next) => {
+
+// academic.patch("/:id([0-9]{1,3})", async (req, res, next) => {
 //     const { nombre, apellido_paterno, apellido_materno, direccion, codigo_postal, estado,
 //         correo_electronico, numero_telefono, formacion_academica, experiencia_profesional, idiomas_domina } = req.body;
   
@@ -147,4 +143,4 @@ usuarios.get('/:mail(([a-zA-Z]*(%20)?){1,5})', async (req, res, next) => {
 
 
 
-module.exports = usuarios;
+module.exports = academic;
