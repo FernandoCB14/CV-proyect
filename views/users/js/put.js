@@ -54,10 +54,6 @@ function showData(usuario) {
                                         <label for="input-tnum">número de teléfono</label>
                                         <input class="form-control"value = ${usuario[i].numero_telefono} id="input-tnum" placeholder="********** ">
                                     <div class="form-group">
-
-                                    </div>
-
-                                    <div class="form-group">
                                         <label for="input-mail">correo electronico</label>
                                         <input class="form-control" value = ${usuario[i].correo_electronico} id="input-mail" placeholder="********** ">
                                     </div>
@@ -85,8 +81,6 @@ function showData(usuario) {
     // btnA.onclick = showDataA
 
     datosUsuario.appendChild(btnA);
-
-
 
 }
 
