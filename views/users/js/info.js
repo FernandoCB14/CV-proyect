@@ -18,26 +18,6 @@ function init(){
     }    
 }
 
-
-
-// function loadUsuario(){
-//     axios.get(url + "/usuarios",headers)
-//     .then(function(res){
-//         console.log(res);
-//         console.log(res.data.message);
-//         showData(res.data.message);     
-//     }).catch(function(err){
-//         console.log(err);
-//     })
-// }
-
-// function showData(usuario){ 
-//     var body = document.querySelector("body");
-//     for(var i=0; i<usuario.length; i++){
-//         body.innerHTML += `<h3>${usuario[i].nombre}</h3>`;
-//     } 
-// }
-
 function borrarToken() {
     localStorage.clear();
     location.reload();

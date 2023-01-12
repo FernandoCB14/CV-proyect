@@ -2,6 +2,15 @@ const express= require('express');
 const profesional= express.Router();
 const db = require('../models/database');
 
+profesional.get("/:id([0-9]{1,3})", async (req, res, next) => {
+    const id_usuario = req.user.user_id;
+    const emp= await db.query(`SELECT * FROM perfil_profesional p, perfil_general g WHERE g.id_usuario= ${req.params.id}`);
+    try {
+      return res.status(200).json({ code: 200, message: emp});
+    } catch (error) {
+      return res.status(404).json({ code: 404, message: "Empleado no encontrado" });
+    }
+  });
 //Consultar los cvs del usuario actual
 profesional.get('/cvs', async (req, res) => {
     const id_usuario = req.user.user_id;
@@ -11,7 +20,6 @@ profesional.get('/cvs', async (req, res) => {
     const emp = await db.query(query);
     return res.status(200).json({ code: 200, message: emp });
 });
-
 
 profesional.post("/insert", async (req, res, next) => {
 
@@ -58,15 +66,20 @@ profesional.post("/insert", async (req, res, next) => {
 profesional.put("/:id([0-9]{1,3})", async (req, res, next) => {
 
     const { nombre, apellido_paterno, apellido_materno, direccion, codigo_postal, estado,
-        correo_electronico, numero_telefono, formacion_profesionala, experiencia_profesional, idiomas_domina } = req.body;
+        correo_electronico, numero_telefono, formacion_academica, experiencia_profesional, idiomas_domina, descripcion_profesional, habilidades_profesional} = req.body;
 
     if (req.body.keys !== null || undefined && req.body.values !== null || undefined) {
         let query = `UPDATE perfil_general SET nombre='${nombre}', apellido_paterno='${apellido_paterno}',`;
         query += `apellido_materno='${apellido_materno}', direccion='${direccion}',codigo_postal= '${codigo_postal}',`;
-        query += `estado='${estado}',correo_electronico ='${correo_electronico}', numero_telefono='${numero_telefono}', formacion_profesionala='${formacion_profesionala}', experiencia_profesional='${experiencia_profesional}', idiomas_domina='${idiomas_domina}' WHERE id_usuario = ${req.params.id};`;
-        const rows = await db.query(query);
+        query += `estado='${estado}',correo_electronico ='${correo_electronico}', numero_telefono='${numero_telefono}', formacion_academica='${formacion_academica}', experiencia_profesional='${experiencia_profesional}', idiomas_domina='${idiomas_domina}' WHERE id_usuario = ${req.params.id};`;
+        const userResult = await db.query(query);
+        console.log(userResult);
 
-        if (rows.affectedRows == 1) {
+        let query2 = `UPDATE perfil_profesional SET descripcion_profesional='${descripcion_profesional}',habilidades_profesional='${habilidades_profesional}' WHERE id_usuario = ${req.params.id};`;
+        const result = await db.query(query2);
+        console.log(result);
+
+        if (result.affectedRows == 1) {
             return res.status(200).json({ code: 200, message: "Empleado actualizado" });
         }
 
