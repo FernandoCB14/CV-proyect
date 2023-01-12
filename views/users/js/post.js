@@ -32,7 +32,7 @@ function newdataA(){
     var formacd= document.getElementById('input-formacd').value;
     var profexp= document.getElementById('input-profexp').value;
     var idioms= document.getElementById('input-idioms').value;
-    var hab=  document.getElementById('input-hab').value;
+    var hab=  document.getElementById('input-habprof').value;
     var otrosin=  document.getElementById('input-ointereses').value;
     
     axios({

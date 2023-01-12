@@ -15,13 +15,13 @@ function init(){
     }    
       
 }
-
 function searchCvs() {
     id_usuario = localStorage.getItem("id")
-    axios.get(url + "/Pacademic/" + id_usuario ,headers)
+    axios.get(url + "/Pprofesional/" + id_usuario ,headers)
         .then(function (res) {
             console.log(res.data.message);
-            showData(res.data.message);         
+            showData(res.data.message);
+           
         })
 }
 
@@ -76,13 +76,13 @@ function showData(usuario) {
                                     <label for="input-idioms">Idiomas</label>
                                     <input class="form-control" value=${item.idiomas_domina} id="input-idioms" placeholder="********** ">
                                 </div>
-                                <div class="form-group">
-                                    <label for="input-skills">habiliades academico</label>
-                                    <input class="form-control" value=${item.habilidades_academico} id="input-skills" placeholder="********** ">
+                                 <div class="form-group">
+                                    <label for="input-profdesc">Descripción profesional</label>
+                                    <input class="form-control" value=${item.descripcion_profesional} id="input-profdesc" placeholder="********** ">
                                 </div>
                                 <div class="form-group">
-                                    <label for="input-ointerests">Otros intereses</label>
-                                    <input class="form-control" value=${item.otros_intereses} id="input-ointerests" placeholder="********** ">
+                                    <label for="input-skillsP">habiliades profesionales</label>
+                                    <input class="form-control" value=${item.habilidades_profesional} id="input-skillsp" placeholder="********** ">
                                 </div>
                                 <div class="form-group">
                                     <button rel="noopener" target="_blank" onClick="update(${item.id_usuario})">Editar</button>
@@ -93,10 +93,8 @@ function showData(usuario) {
     userD.appendChild(fragment);
 }
 
-
 function update(id){
 
-    // var id = document.getElementById('input-id').value;
     var name = document.getElementById('input-name').value;
     var last_name= document.getElementById('input-ln').value;
     var mlast_name= document.getElementById('input-mln').value;
@@ -108,12 +106,13 @@ function update(id){
     var formacd= document.getElementById('input-formacd').value;
     var profexp= document.getElementById('input-profexp').value;
     var idioms= document.getElementById('input-idioms').value;
-    var skills= document.getElementById('input-skills').value;
-    var ointerests= document.getElementById('input-ointerests').value;
+    var profdesc= document.getElementById('input-profdesc').value;
+    var skillsp= document.getElementById('input-skillsp').value;
+    
     
     axios({
         method: 'put',
-        url:'http://localhost:8081/Pacademic/' + id, 
+        url:'http://localhost:8081/Pprofesional/' + id, 
         data:{
             id_usuario:id,
             nombre: name,
@@ -127,8 +126,8 @@ function update(id){
             formacion_academica: formacd,
             experiencia_profesional: profexp,
             idiomas_domina: idioms,
-            habilidades_academico: skills,
-            otros_intereses:ointerests
+            descripcion_profesional:profdesc,
+            habilidades_profesional: skillsp
         },
         headers:{
             'Authorization': "bearer " + localStorage.getItem("token"),
