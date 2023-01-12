@@ -5,14 +5,36 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crear cv</title>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="./users/js/post.js"></script>
+    <link rel="stylesheet" href="../views/public/css/cvp.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    
 </head>
 <body>
-
-    <h1>Crea tu cv con un perfil profesional</h1>
-    <div class="form-group">
+    <header>
+        <h1 class="textheader">Perfil profesional</h1>
+        <div class="nombres">
+            <div class="form-group-names">
+                <input type="name" class="form-control" id="input-name" placeholder="Nombre">
+            </div>
+        </div>
+        <div class="nombres">
+            <div class="form-group-names">
+                <input class="form-control" id="input-ln" placeholder="Apellido Paterno">
+            </div>
+        </div>
+        <div class="nombres">
+            <div class="form-group-names">
+                <input class="form-control" id="input-mln" placeholder="Apellido Materno">
+            </div>
+        </div>
+    </header>
+    
+    <!-- <div class="form-group">
         <label for="input-name">Nombre</label>
         <input type="name" class="form-control" id="input-name" placeholder="******">
     </div>
@@ -20,11 +42,83 @@
         <label for="input-ln">Apellido Paterno</label>
         <input class="form-control" id="input-ln" placeholder="********** ">
     </div>
-     <div class="form-group">
+    <div class="form-group">
         <label for="input-mln">Apellido materno</label>
         <input class="form-control" id="input-mln" placeholder="********** ">
+    </div> -->
+
+    <div class="contenido">
+        <div class="contenido1">
+            <div class="x">
+                <div class="xx">
+                    <h1></h1>
+                </div>
+                <div class="xx">
+                    <h1></h1>
+                </div>
+                <div class="fotoperfil">
+                </div>
+            </div>
+            <div class="detalles">
+                <h1>Detalles</h1>
+            </div>
+            <div class="form-group1">
+                <label for="input-dir">Dirección</label>
+                <input class="form-control" id="input-dir" placeholder="Colonia, calle y número">
+            </div>
+            <div class="form-group1">
+                <label for="input-zp">Código postal</label>
+                <input class="form-control" id="input-zp" placeholder="Código de 6 digitos">
+            </div>
+            <div class="form-group1">
+                <label for="input-sta">Estado</label>
+                <input class="form-control" id="input-sta" placeholder="Entidad Federativa">
+            </div>
+            <div class="form-group1">
+                <label for="input-mail">Correo electrónico</label>
+                <input class="form-control" id="input-mail" placeholder="example@example.com">
+            </div>
+            <div class="form-group1">
+                <label for="input-tnum">Número de teléfono</label>
+                <input class="form-control" id="input-tnum" placeholder="Número de 10 digitos">
+            </div>
+        </div>
+        <div class="contenido2">
+            <div class="perfil">
+                <h1>Perfil</h1>
+            </div>
+            <div class="form-group2">
+                <label for="input-formacd">Formacion academica</label>
+                <input class="form-control" id="input-formacd" placeholder="********** ">
+            </div>
+            <div class="form-group2">
+                <label for="input-profexp">Experiencia profecional</label>
+                <input class="form-control" id="input-profexp" placeholder="********** ">
+            </div>
+            <div class="form-group2">
+                <label for="input-idioms">Idiomas que domina</label>
+                <input class="form-control" id="input-idioms" placeholder="********** ">
+            </div>
+            <div class="form-group2">
+                <label for="input-profdesc">descripcion profesional</label>
+                <input class="form-control" id="input-profdesc" placeholder="********** ">
+            </div>
+            <div class="form-group2">
+                <label for="input-profhabi">habilidades profesionales</label>
+                <input class="form-control" id="input-profhabi" placeholder="********** ">
+            </div>
+            <!-- <div class="form-group2">
+                <label for="input-ointereses">Otros interese</label>
+                <input class="form-control" id="input-ointereses" placeholder="********** ">
+            </div> -->
+        </div>
     </div>
-    <div class="form-group">
+    <div class="d-flex justify-content-between">
+        <button id="btn1">Enviar</button>
+        <input id="btn1" type="button" value="Regresar" onClick="history.go(-1);">
+    </div>
+
+    <!-- <div class="form-group">
         <label for="input-dir">direccion</label>
         <input class="form-control" id="input-dir" placeholder="********** ">
     </div>
@@ -43,8 +137,9 @@
     <div class="form-group">
         <label for="input-tnum">número de teléfono</label>
         <input class="form-control" id="input-tnum" placeholder="********** ">
-    </div>
-    <div class="form-group">
+    </div> -->
+    
+    <!-- <div class="form-group">
         <label for="input-formacd">formacion academica</label>
         <input class="form-control" id="input-formacd" placeholder="********** ">
     </div>
@@ -55,19 +150,8 @@
     <div class="form-group">
         <label for="input-idioms">idiomas que domina</label>
         <input class="form-control" id="input-idioms" placeholder="********** ">
-    </div>
-    <div class="form-group">
-        <label for="input-profdesc">descripcion profesional</label>
-        <input class="form-control" id="input-profdesc" placeholder="********** ">
-    </div>
-    <div class="form-group">
-        <label for="input-profhabi">habilidades profesionales</label>
-        <input class="form-control" id="input-profhabi" placeholder="********** ">
-    </div>
-
-    <div class="d-flex justify-content-between">
-        <button id="btn1">consultar</button>
-        <input type="button" value="Regresar" onClick="history.go(-1);">
-    </div>
+    </div> -->
+    
+    
 </body>
 </html>

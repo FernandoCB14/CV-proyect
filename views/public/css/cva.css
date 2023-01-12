@@ -1,38 +1,168 @@
-
-
 body{
-    background-color: #acacac;
+    background-color: #ffffff;
     color: white;
     font-family: 'Montserrat', sans-serif;
     
 }
 header{
-    display: flex;
-    background-color: black;
-    width: 101%;
-    min-height: 70px;
-    margin-left: -15px;
-    margin-top: -8px;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-    
+  display: flex;
+  background-color: #26477D;
+  width: 102%;
+  min-height: 70px;
+  margin-left: -8px;
+  margin-top: -8px;
+  color: white;
+  display: grid;
+  grid-template-columns: 1.1fr 1.3fr 1.3fr 1.3fr;
+  
+}
+.textheader{
+  margin-left: 5%;
+  margin-bottom: -1%;
+}
+.fotoperfil{
+  width: 120px;
+  height: 120px;
+  background-color: rgb(182, 182, 182);
+  border-radius: 50%;
+  text-align: center;
+  margin-left: 180px;
+  margin-bottom: 10px;
+  
+}
+.perfil{
+  color: #26477D;
+  margin-left: 30px;
+  font-size: xx-small;
+}
+.detalles{
+  color: #26477D;
+  text-align: right;
+  margin-right: 40px;
+  font-size: xx-small;
+}
+.nombres{
+  padding-left: 5px;
+  font-size: large;
+  color: #26477D;
+}
+.form-group1{
+  /* display: grid;
+  grid-template-columns: 1fr 1fr; */
+  grid-gap: 30px;
+  /* padding: 20px; */
+  padding-top: 7px;
+  /* padding-bottom: 10px;
+  padding-left: 40px; */
+  padding-right: 40px;
+  text-align: right;
+  font-size: small;
+  color: #26477D;
+}
+.form-group-names{
+  /* display: grid;
+  grid-template-columns: 1fr 1fr; */
+  grid-gap: 30px;
+  /* padding: 20px; */
+  padding-top: 20px;
+  /* padding-bottom: 10px;
+  padding-left: 40px; */
+  text-align: left;
+  font-size: small;
+}
+.form-group2{
+  /* display: grid;
+  grid-template-columns: 1fr 1fr; */
+  /* padding: 20px; */
+  padding-bottom: 10px;
+  padding-left: 30px;
+  padding-right: 40px;
+
+  grid-gap: 30px;
+  /* padding: 20px; */
+  padding-top: 7px;
+  /* padding-bottom: 10px;
+  padding-left: 40px; */
+  padding-right: 40px;
+  text-align: left;
+  font-size: small;
+  color: #26477D;
 }
 .contenido{
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 3fr;
 }
-.form-group{
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 30px;
-  /* padding: 20px; */
-  padding-top: 10px;
-  padding-bottom: 10px;
-  padding-left: 20px;
-  padding-right: 20px;
+.contenido1{
+  background-color: rgb(243, 243, 243);
 }
-.contenido input {
+.form-group1 input {
+  /* width: 60%; */
+  /* display: block;
+  margin-left: 120px;
+  margin-bottom: 2rem;*/
+  /* text-align: right;
+  outline: none;
+  padding: .2rem 0;
+  font-size: .9rem;
+  color: rgb(255, 255, 255);  */
+  border-bottom: #26477D thin solid;
+  width: 95%;
+  padding-right: 7.5px;
+  margin: 5px 0;
+  box-sizing: border-box;
+  font-size: medium;
+  background-color: transparent;
+  border: none;
+  text-align: right;
+}
+.nombres input {
+  /* width: 60%; */
+  /* display: block;
+  margin-left: 120px;
+  margin-bottom: 2rem;*/
+  background-color: transparent;
+  border: none;
+  text-align: center;
+  color: white;
+  /* text-align: right;
+  outline: none;
+  padding: .2rem 0;
+  font-size: .9rem;
+  color: rgb(255, 255, 255);  */
+  
+  width: 60%;
+  padding-right: 7.5px;
+  margin: 5px 0;
+  box-sizing: border-box;
+  font-size: 2em;
+  text-align: left;
+}
+.contenido2 input {
+  /* width: 100%;
+  display: block;
+  margin: auto;
+  margin-bottom: 2rem;
+  background-color: transparent;
+  border: none;
+  border-bottom: rgb(145, 79, 79) thin solid;
+  text-align: center;
+  outline: none;
+  padding: .2rem 0;
+  font-size: .9rem;
+  color: rgb(255, 255, 255); */
+  height: 100px;
+  border: #26477D thin solid;
+  width: 95%;
+  padding-right: 7.5px;
+  margin: 5px 0;
+  box-sizing: border-box;
+  font-size: medium;
+  background-color: transparent;
+  /* border: none; */
+  text-align: left;
+  border-radius: 10px;
+}
+/* .contenido input {
   width: 100%;
   display: block;
   margin: auto;
@@ -45,7 +175,7 @@ header{
   padding: .2rem 0;
   font-size: .9rem;
   color: rgb(255, 255, 255);
-}
+} */
 #btn1 {
   margin: auto;
   width: 30%;
@@ -62,5 +192,18 @@ header{
   color: #fff;
 } 
 
+.d-flex{
+  margin-top: 30px;
+  margin-left: 600px;
+}
+.x{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.xx{
+  width: 5%;
+  height: 5%;
+  
+}
 
 

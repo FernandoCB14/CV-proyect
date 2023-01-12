@@ -10,35 +10,68 @@
     <link rel="stylesheet" href="../views/public/css/styles_createcv.css">
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <!-- <script src="./users/js/post.js"></script> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 
 <body>
 
-    <!-- <header>
-        <div class="div-logo">
-            <img src="./public/img/3.jpg" alt="logo">
-            <h2>CVitae</h2>
-        </div>
-    </header> -->
+    <header>
+        <h1 class="textheader">¿Cómo quieres crear tu CV?
+        </h1>
+        
+    </header>
 
-    <div class="container-form">
-        <div class="formulario">
-            <h2>¿Eres estudiante?</h2>
-            <div class="buttons">
-                <form action="./cva.html">
-                    <button class="btn btnopencv text-white"> Si</button>
-                </form>
-                <form action="./cvp.html">
-                    <button class="btn btnopencv text-white">No</button>
-                </form>
-                <input type="button" value="Regresar" onClick="history.go(-1);">
+
+    <div class="contenido">
+        <div>
+
+        </div>
+        <div class="container-form">
+            <div class="formulario">
+                <h2>Perfil Académico</h2>
+                <label class="infotext">
+                    Utiliza el perfil académico para solicitar una plaza como becario,  compaginar tus estudios con un trabajo, o para estudiar un master.
+                </label>
+                <div class="buttons">
+                    <form action="./cva.html">
+                        <button class="btn btnopencv text-white">Crear</button>
+                    </form>
+                </div>
             </div>
-            
-            
+        </div>
+        <div class="container-form">
+            <div class="formulario">
+                <h2>Perfil Profesional</h2>
+                <label class="infotext">
+                    Utiliza el perfil profesional como apoyo o representación de tus aptitudes y conocimientos ante la postulación para un puesto de trabajo.
+                </label>
+                
+                <div class="buttons">
+                    <form action="./cvp.html">
+                        <button class="btn btnopencv text-white">Crear</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div>
+
         </div>
     </div>
-   
-   
+    <div class="contenido1">
+        <div>
+
+        </div>
+        <div class="buttons">
+            <input type="button" value="Atrás" onClick="history.go(-1);">
+        </div> 
+        <div>
+        
+        </div>
+    </div>
+    
 
 
 </body>

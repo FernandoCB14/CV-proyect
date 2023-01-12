@@ -1,27 +1,50 @@
 body{
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.0)), url("../img/images.jpg");
+    /* background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.0)), url("../img/images.jpg"); */
+    background-color: white;
     height: 100vh;
     align-items: center;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    color: #ffffff;
+    color: #26477D;
     /* display: flex; */
     justify-content: center;  
     flex-wrap: wrap;
     font-family: 'Montserrat', sans-serif;
+
+    
+}
+.contenido{
+    margin-top: 80px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+.contenido1{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+.infotext{
+    margin-top: 5px;
+    font-size: small;
+    color: black;
+
 }
 
 header{
     display: flex;
     background-color: #26477D;
+    width: 101%;
     min-height: 70px;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px; 
+    margin-left: -8px;
+    margin-top: -8px;
+    color: white;
     
 }
-
+.textheader{
+    margin-left: 5%;
+    margin-bottom: -1%;
+    
+}
 .div-logo{
     display: flex;
     align-items: center;
@@ -36,7 +59,7 @@ header{
 
 .container-form{
     width: 90%;
-    height: 80vh;
+    height: 55vh;
     display: flex;
     justify-content: space-around;
     transition:  all .5s ease-out;
@@ -46,14 +69,17 @@ header{
     width: 400px;
     padding: 2rem;
     margin: 2.5rem;
-    background-color: rgb(51, 51, 51, 0.602);
+    background-color: rgb(243, 243, 243);
     text-align: center;
     border-radius: 10px;
     margin-left: 16%;
+    
 }
-
+h2{
+    text-align: center;
+}
 .formulario h2{
-    padding: 5.7rem 0;
+    padding: 1rem 0;
     font-size: 1.7rem;
 }
 
@@ -79,12 +105,12 @@ header{
 }
 
 .buttons{
-    margin-top: -20%;
-    
+    /* margin-top: -25%; */
+    text-align: center;
 }
 
 .buttons input{
-    width: 40%;
+    width: 25%;
     margin: auto;
     border: solid thin #26477D;
     padding: .5rem;
