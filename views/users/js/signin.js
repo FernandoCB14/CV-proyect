@@ -30,7 +30,7 @@ function signin(){
     }).then(function (res){
         alert("Registro exitoso");
 
-        if(res.data.code ===200){
+        if(res.data.code ===201){
             localStorage.setItem('token', res.data.message);
             window.location.href = "info.html";
             console.log(res);
