@@ -6,25 +6,28 @@
 }
 
 body{
-
-    background-image:linear-gradient(rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.5)), url("../img/images.jpg");
+    
+    background: white;
     /* background-color: #060607; */
     height: 100vh;
-    display: flex;
+    /* display: flex; */
     align-items: center;
     justify-content: center;  
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    color: #ffffff;
+    color: #26477D;
 }
 
 .container-form {
-    width: 90%;
+    /* width: 90%; */
     /* height: 90vh; */
     display: flex;
     justify-content: space-around;
     transition:  all .5s ease-out;
+    padding-top: 40px;
+    padding-left: 120px;
+    padding-right: 120px;
 }
 
 .welcome-back {
@@ -54,8 +57,6 @@ body{
     margin-top: 2rem;
     transition: all .3s ease-in;
     color: #fff;
-
-  
 }
 
 .message button:hover {
@@ -66,8 +67,8 @@ body{
     width: 400px;
     height: 570px;
     padding: 1rem;
-    margin: 1.5rem;
-    background-color: rgba(39, 39, 39, 0.602);
+    margin: 2.5rem;
+    background-color: rgba(243, 243, 243);
     text-align: center;
     border-radius: 10px;
 }
@@ -82,8 +83,7 @@ body{
     width: 200px;
     display: flex;
     justify-content: space-around;
-    margin: auto;
-}
+    margin: auto;}
 
 .border-icon {
     height: 20px;
@@ -92,10 +92,11 @@ body{
     align-items: center;
     justify-content: center;
     padding: 1.5rem;
-    border: solid thin white;
+    border: solid thin #26477D;
     border-radius: 50%;
     font-size: 1.5rem;
     transition: all .3s ease-in;
+
 }
 
 .border-icon:hover {
@@ -114,12 +115,12 @@ body{
     margin-bottom: 2rem;
     background-color: transparent;
     border: none;
-    border-bottom: rgb(145, 79, 79) thin solid;
+    /* border-bottom: rgb(145, 79, 79) thin solid; */
     text-align: center;
     outline: none;
     padding: .2rem 0;
     font-size: .9rem;
-    color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
 }
 
 .formulario button {
@@ -150,5 +151,25 @@ body{
 a:hover{
     color: #26477D;
 }
+
+header{
+    display: flex;
+    background-color: #26477D;
+    /* width: 10%; */
+    min-height: 70px;
+    margin-left: -8px;
+    margin-top: -8px;
+    color: white;
+    display: grid;
+    grid-template-columns: 1.1fr 1.3fr 1.3fr 1.3fr;
+    
+}
+.textheader{
+    margin-left: 5%;
+    margin-top: 5%;
+    
+}
+/* ====================*/
+
 
 
