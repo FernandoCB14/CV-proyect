@@ -13,6 +13,7 @@ function init() {
             }
         }
         searchCvsa();
+        
     } else {
         window.location.href = "login.html";
     }
@@ -23,6 +24,7 @@ function searchCvsa() {
         .then(function (res) {
             console.log(res.data.message);
             showCards(res.data.message);
+            
         })
 }
 

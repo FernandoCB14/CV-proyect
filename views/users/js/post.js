@@ -59,7 +59,7 @@ function newdataA(){
     }).then(function (res){
         if(res.data.code ===200){
             alert("Datos creados");
-            // window.location.href="info.html";  
+            window.location.href="opencv.html";  
         }else{
             alert("Algo salió mal");
         }
@@ -108,7 +108,7 @@ function newdataP(){
     }).then(function (res){
         if(res.data.code ===200){
             alert("Datos creados");
-            // window.location.href="info.html";  
+            window.location.href="opencv.html"; 
         }else{
             alert("Algo salió mal");
         }

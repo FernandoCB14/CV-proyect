@@ -84,9 +84,12 @@ function showData(usuario) {
                                     <label for="input-ointerests">Otros intereses</label>
                                     <input class="form-control" value=${item.otros_intereses} id="input-ointerests" placeholder="********** ">
                                 </div>
-                                <div class="form-group">
-                                    <button rel="noopener" target="_blank" onClick="update(${item.id_usuario})">Editar</button>
+
+                                <div id="buttons">
+                                <button rel="noopener" target="_blank" onClick="update(${item.id_usuario})">Actualizar</button>
+                                <input type="button" value="Regresar" onClick="history.go(-1);">
                                 </div>
+                
                         </div>`;
         fragment.appendChild(div);
     });
