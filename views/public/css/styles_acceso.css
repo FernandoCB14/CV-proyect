@@ -4,10 +4,14 @@
     box-sizing: border-box;
     font-family: 'Montserrat', sans-serif;
 }
-
+.logo{
+    width: auto;
+    height: auto;
+}
 body{
     
-    background: white;
+    /* background: white; */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.0)), url("../img/images.jpg");
     /* background-color: #060607; */
     height: 100vh;
     /* display: flex; */
@@ -43,6 +47,10 @@ body{
 .message h2 {
     font-size: 1.7rem;
     padding: 1rem 0;
+    color:white;
+}
+.message p{
+    color:white;
 }
 
 .message button {
@@ -157,17 +165,18 @@ header{
     background-color: #26477D;
     /* width: 10%; */
     min-height: 70px;
-    margin-left: -8px;
-    margin-top: -8px;
+    /* margin-left: -80px; */
+    /* margin-top: -20px; */
     color: white;
-    display: grid;
-    grid-template-columns: 1.1fr 1.3fr 1.3fr 1.3fr;
-    
+    /* display: grid; */
+    /* grid-template-columns: 1.1fr 1.3fr 1.3fr 1.3fr; */
+    align-content: center;
+    align-items: center;
 }
 .textheader{
     margin-left: 5%;
-    margin-top: 5%;
-    
+    /* margin-top: 3%; */
+        
 }
 /* ====================*/
 

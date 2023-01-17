@@ -1,5 +1,5 @@
 body{
-    /* background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.0)), url("../img/images.jpg"); */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.0)), url("../img/images.jpg");
     background-color: white;
     height: 100vh;
     align-items: center;
@@ -38,11 +38,15 @@ header{
     margin-left: -8px;
     margin-top: -8px;
     color: white;
+    /* align-items: center; */
+    align-content: center;
     
 }
 .textheader{
     margin-left: 5%;
-    margin-bottom: -1%;
+    margin-bottom: -0.5%;
+    margin-top: 1%;
+    
     
 }
 .div-logo{

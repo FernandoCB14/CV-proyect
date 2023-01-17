@@ -39,16 +39,16 @@ function showCards(cvs) {
         div.id = `cv-card${index + 1}`;
 
         div.innerHTML = `<h2 class= "titulo">${item.nombre}</h2> 
-                         ${item.apellido_paterno}  
-                         ${item.apellido_materno}
-                         <div class="dropdown">
-                         <button><i class='bx bx-list-ul'></i></button>
-                         <div class="dropdown-content"> 
-                             <a rel="noopener" target="_blank" onClick="update(${item.id_usuario}, '${item.tipo}')">Editar</a> 
-                             <a rel="noopener" target="_blank" onClick="deleteCv(${item.id_usuario})">Eliminar</a>
-                             <a rel="noopener" target="_blank" onClick="window.print()">Imprimir</a>
-                         </div>
-                     </div>`;
+                        ${item.apellido_paterno}  
+                        ${item.apellido_materno}
+                        <div class="dropdown">
+                        <button><i class='bx bx-list-ul'></i></button>
+                        <div class="dropdown-content"> 
+                            <a rel="noopener" target="_blank" onClick="update(${item.id_usuario}, '${item.tipo}')">Editar</a> 
+                            <a rel="noopener" target="_blank" onClick="deleteCv(${item.id_usuario})">Eliminar</a>
+                            <a rel="noopener" target="_blank" onClick="window.print()">Imprimir</a>
+                        </div>
+                    </div>`;
         fragment.appendChild(div);
     });
     myCvs.appendChild(fragment);

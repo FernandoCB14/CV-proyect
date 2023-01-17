@@ -1,0 +1,29 @@
+body{
+    background: rgb(255, 255, 255);
+    font-family: 'Montserrat', sans-serif;
+
+}
+header{
+    display: flex;
+    background-color: #26477D;
+    width: 101%;
+    min-height: 70px;
+    margin-left: -8px;
+    margin-top: -8px;
+    color: white;
+    
+}
+.textheader{
+    margin-left: 5%;
+    margin-bottom: -1%;
+    
+}
+.formulario {
+    width: 400px;
+    height: 570px;
+    padding: 1rem;
+    margin: 2.5rem;
+    background-color: rgba(243, 243, 243);
+    text-align: center;
+    border-radius: 10px;
+}
