@@ -8,17 +8,13 @@ function init(){
             headers:{
                 'Authorization': "bearer " + localStorage.getItem("token"),
             }
-        }
-        // console.log(headers);
-        // searchid();
+        };
         document.getElementById('btn1').addEventListener('click', newdataA);  
         document.getElementById('btn1').addEventListener('click', newdataP); 
-        // document.getElementById('btn2').addEventListener('click', searchname);  
     }else{
         window.location.href="login.html";   
     }    
 }
-
 
 function newdataA(){
     var name = document.getElementById('input-name').value;
@@ -59,12 +55,13 @@ function newdataA(){
     }).then(function (res){
         if(res.data.code ===200){
             alert("Datos creados");
-            // window.location.href="opencv.html";  
+            window.location.href="opencv.html";  
         }else{
             alert("Algo salió mal");
         }
     }).catch(function(err){
         console.log(err);
+        
     });
 }
 
@@ -114,5 +111,6 @@ function newdataP(){
         }
     }).catch(function(err){
         console.log(err);
+        alert("Datos incompletos");
     });
 }

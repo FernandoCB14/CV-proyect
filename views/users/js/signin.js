@@ -30,10 +30,12 @@ function signin(){
     }).then(function (res){
         alert("Registro exitoso");
         if(res.data.code ===201){
+<<<<<<< HEAD
             
+=======
+>>>>>>> Fernando
             window.location.href = "login.html";
             console.log(res);
-            // window.location.href="login.html";
         }
     }).catch(function(err){
         console.log(err);
