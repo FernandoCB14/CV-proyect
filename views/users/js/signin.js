@@ -29,10 +29,9 @@ function signin(){
         }
     }).then(function (res){
         alert("Registro exitoso");
-
         if(res.data.code ===201){
-            localStorage.setItem('token', res.data.message);
-            window.location.href = "info.html";
+            
+            window.location.href = "login.html";
             console.log(res);
             // window.location.href="login.html";
         }

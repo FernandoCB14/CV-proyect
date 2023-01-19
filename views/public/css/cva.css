@@ -12,8 +12,8 @@ header{
   margin-left: -8px;
   margin-top: -8px;
   color: white;
-  display: grid;
-  grid-template-columns: 1.1fr 1.3fr 1.3fr 1.3fr;
+  /* display: grid;
+  grid-template-columns: 1.1fr 1.3fr 1.3fr 1.3fr; */
   
 }
 .textheader{
@@ -45,6 +45,7 @@ header{
   padding-left: 5px;
   font-size: large;
   color: #26477D;
+  margin-left: 35px;
 }
 .form-group1{
   /* display: grid;
@@ -64,7 +65,7 @@ header{
   grid-template-columns: 1fr 1fr; */
   grid-gap: 30px;
   /* padding: 20px; */
-  padding-top: 20px;
+  padding-top: 10px;
   /* padding-bottom: 10px;
   padding-left: 40px; */
   text-align: left;
@@ -123,19 +124,13 @@ header{
   background-color: transparent;
   border: none;
   text-align: center;
-  color: white;
-  /* text-align: right;
-  outline: none;
-  padding: .2rem 0;
-  font-size: .9rem;
-  color: rgb(255, 255, 255);  */
-  
-  width: 60%;
-  padding-right: 7.5px;
+  color: #26477D;
+  text-align: center;
+  /* width: 60%; */
+  /* padding-right: 7.5px; */
   margin: 5px 0;
   box-sizing: border-box;
   font-size: 2em;
-  text-align: left;
 }
 .contenido2 input {
   height: 100px;
@@ -149,20 +144,6 @@ header{
   text-align: left;
   border-radius: 10px;
 }
-/* .contenido input {
-  width: 100%;
-  display: block;
-  margin: auto;
-  margin-bottom: 2rem;
-  background-color: transparent;
-  border: none;
-  border-bottom: rgb(145, 79, 79) thin solid;
-  text-align: center;
-  outline: none;
-  padding: .2rem 0;
-  font-size: .9rem;
-  color: rgb(255, 255, 255);
-} */
 #btn1 {
   margin: auto;
   width: 30%;
