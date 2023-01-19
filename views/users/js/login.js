@@ -10,8 +10,6 @@ function init(){
         
         window.location.href="info.html"
     }
-
-    
 }
 
 function login(){
@@ -29,11 +27,9 @@ function login(){
         if(res.data.code ===200){
             localStorage.setItem("token", res.data.message);
             window.location.href = "info.html";
-
-        }else{
-            alert("Usuario y/o contraseña incorrectos")
         }
     }).catch(function(err){
         console.log(err);
+        alert("Usuario y/o contraseña incorrectos")
     });
 }

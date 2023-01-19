@@ -1,5 +1,3 @@
-// const db = require('../models/database');
-// const squel= require('squel');
 window.onload = init;
 var headers = {};
 var url = "http://localhost:8081";
@@ -24,6 +22,7 @@ function searchCvsa() {
         .then(function (res) {
             console.log(res.data.message);
             showCards(res.data.message);
+            
             
         })
 }
@@ -53,7 +52,7 @@ function showCards(cvs) {
                     </div>`;
         fragment.appendChild(div);
     });
-    myCvs.appendChild(fragment);
+    myCvs.appendChild(fragment);   
 }
 
 //PUT
@@ -75,7 +74,6 @@ function deleteCv(id) {
                 console.log(err);
             });
 }; 
-
 
 function update(id, tipo) {
     localStorage.setItem("id", id)
