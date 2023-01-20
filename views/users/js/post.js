@@ -54,7 +54,10 @@ function newdataA(){
         }
     }).then(function (res){
         if(res.data.code ===200){
-            alert("Datos creados"); 
+            alert("Datos creados");
+            window.location.href="opencv.html"; 
+
+            
         }else{
             alert("Algo salió mal");
         }
@@ -63,6 +66,7 @@ function newdataA(){
         
     });
 }
+
 
 function newdataP(){
     var name = document.getElementById('input-name').value;
