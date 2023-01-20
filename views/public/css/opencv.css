@@ -1,3 +1,5 @@
+
+
 body{
   /* background: white; */
   font-family: 'Montserrat', sans-serif;
@@ -19,12 +21,16 @@ body{
 header{
   display: flex;
   background-color: #26477D;
-  width: 100.55%;
-  min-height: 70px;
+  width: 101%;
+  /* min-height: 70px; */
   margin-left: -8px;
   margin-top: -8px;
   color: white;
+  align-items: center;
   
+}
+.tarjeta{
+  margin-top: 20px;
 }
 .titulo{
   background-color: #26477D;
@@ -35,7 +41,7 @@ header{
 }
 .textheader{
   margin-left: 5%;
-  margin-bottom: -1%;
+  /* margin-bottom: 1%; */
 }
 .contaner{
   background-color: transparent;
