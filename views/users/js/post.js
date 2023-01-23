@@ -55,7 +55,9 @@ function newdataA(){
     }).then(function (res){
         if(res.data.code ===200){
             alert("Datos creados");
-            window.location.href="opencv.html";  
+            window.location.href="opencv.html"; 
+
+            
         }else{
             alert("Algo salió mal");
         }
@@ -65,9 +67,10 @@ function newdataA(){
     });
 }
 
+
 function newdataP(){
     var name = document.getElementById('input-name').value;
-    var last_name= document.getElementsByName('input-ln').value;
+    var last_name= document.getElementById('input-ln').value;
     var mlast_name= document.getElementById('input-mln').value;
     var direc= document.getElementById('input-dir').value;
     var zp= document.getElementById('input-zp').value;
@@ -105,7 +108,7 @@ function newdataP(){
     }).then(function (res){
         if(res.data.code ===200){
             alert("Datos creados");
-            // window.location.href="info.html";
+            window.location.href="opencv.html"; 
         }else{
             alert("Algo salió mal");
         }

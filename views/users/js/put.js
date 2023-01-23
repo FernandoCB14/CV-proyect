@@ -13,7 +13,6 @@ function init(){
     }else{
         window.location.href="login.html";   
     }    
-      
 }
 
 function searchCvs() {
@@ -29,60 +28,62 @@ function showData(usuario) {
     const userD = document.getElementById('datos-usuario');
     const fragment = document.createDocumentFragment();
 
-    usuario.forEach((item, index) => {
+    // usuario.forEach((item, index) => {
+    
     const tarjeta= document.createElement('div');
     tarjeta.className='tarjeta';
 
         const div = document.createElement('div');
+        const item= usuario[0];
         div.className = `user_data`;
-        div.id = `user-data${index + 1}`;
+        div.id = `user-data`;
 
         div.innerHTML = `<div>
                                 <div class="form-group">
                                     <label for="input-name">Nombre</label>
-                                    <input class="form-control" value='${item.nombre}'id="input-name" placeholder="******">
-                                    <input class="form-control" value='${item.apellido_paterno}' id="input-ln" placeholder="********** ">
-                                    <input class="form-control" value='${item.apellido_materno}' id="input-mln" placeholder="********** ">
+                                    <input class="form-control" value='${item.nombre}'id="input-name" placeholder="">
+                                    <input class="form-control" value='${item.apellido_paterno}' id="input-ln" placeholder="">
+                                    <input class="form-control" value='${item.apellido_materno}' id="input-mln" placeholder="">
                                 </div>
-                                <div>
+                                <div class="form-group">
                                     <label for="input-dir">direccion</label>
-                                    <input class="form-control" value='${item.direccion}' id="input-dir" placeholder="********** ">
+                                    <input class="form-control" value='${item.direccion}' id="input-dir" placeholder="">
                                 </div>
                                 <div class="form-group">
                                     <label for="input-zp">codigo postal</label>
-                                    <input class="form-control" value='${item.codigo_postal}' id="input-zp" placeholder="********** ">
+                                    <input class="form-control" value='${item.codigo_postal}' id="input-zp" placeholder="">
                                 </div>
                                 <div class="form-group">
                                     <label for="input-sta">estado</label>
-                                    <input class="form-control" value='${item.estado}' id="input-sta" placeholder="********** ">
+                                    <input class="form-control" value='${item.estado}' id="input-sta" placeholder="">
                                 </div>
                                 <div class="form-group">
                                     <label for="input-mail">correo electrónico</label>
-                                    <input class="form-control" value='${item.correo_electronico}' id="input-mail" placeholder="********** ">
+                                    <input class="form-control" value='${item.correo_electronico}' id="input-mail" placeholder="">
                                 </div>
                                 <div class="form-group">
                                     <label for="input-phone">Número telefónico</label>
-                                    <input class="form-control" value='${item.numero_telefono}' id="input-phone" placeholder="********** ">
+                                    <input class="form-control" value='${item.numero_telefono}' id="input-phone" placeholder="">
                                 </div>  
                                 <div class="form-group">
                                     <label for="input-formacd">Formación académica</label>
-                                    <input class="form-control" value='${item.formacion_academica}' id="input-formacd" placeholder="********** ">
+                                    <input class="form-control" value='${item.formacion_academica}' id="input-formacd" placeholder="">
                                 </div>   
                                 <div class="form-group">
                                     <label for="input-profexp">Experiencia profesional </label>
-                                    <input class="form-control" value='${item.experiencia_profesional}' id="input-profexp" placeholder="********** ">
+                                    <input class="form-control" value='${item.experiencia_profesional}' id="input-profexp" placeholder="">
                                 </div>
                                 <div class="form-group">
                                     <label for="input-idioms">Idiomas</label>
-                                    <input class="form-control" value='${item.idiomas_domina}' id="input-idioms" placeholder="********** ">
+                                    <input class="form-control" value='${item.idiomas_domina}' id="input-idioms" placeholder="">
                                 </div>
                                 <div class="form-group">
                                     <label for="input-skills">habiliades academico</label>
-                                    <input class="form-control" value='${item.habilidades_academico}' id="input-skills" placeholder="********** ">
+                                    <input class="form-control" value='${item.habilidades_academico}' id="input-skills" placeholder="">
                                 </div>
                                 <div class="form-group">
                                     <label for="input-ointerests">Otros intereses</label>
-                                    <input class="form-control" value='${item.otros_intereses}' id="input-ointerests" placeholder="********** ">
+                                    <input class="form-control" value='${item.otros_intereses}' id="input-ointerests" placeholder="">
                                 </div>
 
                                 <div id="buttons">
@@ -92,7 +93,7 @@ function showData(usuario) {
                 
                         </div>`;
         fragment.appendChild(div);
-    });
+    // });
     userD.appendChild(fragment);
 }
 
@@ -140,6 +141,7 @@ function update(id){
         if(res.data.code ===200){
             console.log(res.data.message);
             alert("Datos actualizados");
+            window.location.href="opencv.html"; 
         }else{
             alert("Algo salió mal");
         }
