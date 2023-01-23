@@ -20,6 +20,7 @@ user.post("/signin", async(req, res, next) =>{
     return res.status(500).json({code: 500, message:"campos incompletos"})
 })
 
+
 user.post("/login",async (req, res, next) =>{
     const {user_mail, user_password}=req.body;
     const query = `SELECT * FROM users WHERE user_mail= '${user_mail}' AND user_password = '${user_password}';`;
