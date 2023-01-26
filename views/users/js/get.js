@@ -1,6 +1,10 @@
+
+
 window.onload = init;
 var headers = {};
 var url = "http://localhost:8081";
+
+
 // const mysql= require('mysql');
 
 function init() {
@@ -47,7 +51,7 @@ function showCards(cvs) {
                         <div class="dropdown-content"> 
                             <a rel="noopener" target="_blank" onClick="update(${item.id_usuario}, '${item.tipo}')">Editar</a> 
                             <a rel="noopener" target="_blank" onClick="deleteCv(${item.id_usuario})">Eliminar</a>
-                            <a rel="noopener" target="_blank" onClick="window.print()">Imprimir</a>
+                            <a rel="noopener" target="_blank" onClick="btnpdf(${item.id})">Imprimir</a>
                         </div>
                     </div>`;
         fragment.appendChild(div);
@@ -84,6 +88,23 @@ function update(id, tipo) {
         window.location= "editcva.html"
     }
     
+}
+
+function btnpdf(id) {
+    var doc = new jsPDF('p', 'pt', 'letter');
+    var margin = 10;
+    var scale = (doc.internal.pageSize.width - margin * 2 )/ document.body.scrollWidth;
+    doc.html(document.body,{
+        x:margin,
+        y: margin,
+        html2canvas:{
+            scale: scale,
+
+        },
+        callback: function(doc){
+            doc.output('dataurlnewwindow', {filname: 'fiche'});
+        }
+    }); 
 }
 
 
