@@ -116,6 +116,9 @@ header{
   border: none;
   text-align: right;
 }
+/* ========================================= */
+
+/* ========================================= */
 .nombres input {
   /* width: 60%; */
   /* display: block;
@@ -173,5 +176,16 @@ header{
   height: 5%;
   
 }
-
+.contenido2 textarea{
+  background-color: transparent;
+  height: 100px;
+  width: 95%;
+  padding-right: 7.5px;
+  padding: 10px;
+  margin: 5px 0;
+  box-sizing: border-box;
+  font-size: medium;
+  border-radius: 10px;
+  border: #26477D thin solid;
+}
 

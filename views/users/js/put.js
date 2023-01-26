@@ -39,52 +39,69 @@ function showData(usuario) {
         div.id = `user-data`;
 
         div.innerHTML = `<div>
-                                <div class="form-group">
-                                    <label for="input-name">Nombre</label>
-                                    <input class="form-control" value='${item.nombre}'id="input-name" placeholder="">
-                                    <input class="form-control" value='${item.apellido_paterno}' id="input-ln" placeholder="">
-                                    <input class="form-control" value='${item.apellido_materno}' id="input-mln" placeholder="">
+
+                            <div class="contenido">
+                                <div class="contenido1">
+                                    <div class="nombres">
+                                        <div class="form-group-names">
+                                            <label for="input-name">Nombre</label>
+                                            <input class="form-control" value='${item.nombre}'id="input-name" placeholder="">
+                                            <input class="form-control" value='${item.apellido_paterno}' id="input-ln" placeholder="">
+                                            <input class="form-control" value='${item.apellido_materno}' id="input-mln" placeholder="">
+                                        </div>
+                                        <div class="detalles">
+                                            <h1>Datos de contacto</h1>
+                                        </div>
+                                        <div class="form-group1">
+                                            <label for="input-dir">Dirección</label>
+                                            <input class="form-control" value='${item.direccion}' id="input-dir" placeholder="">
+                                        </div>
+                                        <div class="form-group1">
+                                            <label for="input-zp">Código postal</label>
+                                            <input class="form-control" value='${item.codigo_postal}' id="input-zp" placeholder="">
+                                        </div>
+                                        <div class="form-group1">
+                                            <label for="input-sta">estado</label>
+                                            <input class="form-control" value='${item.estado}' id="input-sta" placeholder="">
+                                        </div>
+                                        <div class="form-group1">
+                                            <label for="input-mail">correo electrónico</label>
+                                            <input class="form-control" value='${item.correo_electronico}' id="input-mail" placeholder="">
+                                        </div>
+                                        <div class="form-group1">
+                                            <label for="input-phone">Número telefónico</label>
+                                            <input class="form-control" value='${item.numero_telefono}' id="input-phone" placeholder="">
+                                        </div>  
+                                    </div>
                                 </div>
-                                <div class="form-group">
-                                    <label for="input-dir">direccion</label>
-                                    <input class="form-control" value='${item.direccion}' id="input-dir" placeholder="">
+
+                                <div class="contenido2">
+                                    <div class="form-group2">
+                                        <label for="input-formacd">Formación académica</label>
+                                        <input class="form-control" value='${item.formacion_academica}' id="input-formacd" placeholder="">
+                                        <textarea name="" value='${item.formacion_academica}' id="input-formacd" cols="30" rows="10" ></textarea>
+
+                                    </div>   
+                                    <div class="form-group2">
+                                        <label for="input-profexp">Experiencia profesional </label>
+                                        <input class="form-control" value='${item.experiencia_profesional}' id="input-profexp" placeholder="">
+                                    </div>
+                                    <div class="form-group2">
+                                        <label for="input-idioms">Idiomas</label>
+                                        <input class="form-control" value='${item.idiomas_domina}' id="input-idioms" placeholder="">
+                                    </div>
+                                    <div class="form-group2">
+                                        <label for="input-skills">habiliades academico</label>
+                                        <input class="form-control" value='${item.habilidades_academico}' id="input-skills" placeholder="">
+                                    </div>
+                                    <div class="form-group2">
+                                        <label for="input-ointerests">Otros intereses</label>
+                                        <input class="form-control" value='${item.otros_intereses}' id="input-ointerests" placeholder="">
+                                    </div>
                                 </div>
-                                <div class="form-group">
-                                    <label for="input-zp">codigo postal</label>
-                                    <input class="form-control" value='${item.codigo_postal}' id="input-zp" placeholder="">
-                                </div>
-                                <div class="form-group">
-                                    <label for="input-sta">estado</label>
-                                    <input class="form-control" value='${item.estado}' id="input-sta" placeholder="">
-                                </div>
-                                <div class="form-group">
-                                    <label for="input-mail">correo electrónico</label>
-                                    <input class="form-control" value='${item.correo_electronico}' id="input-mail" placeholder="">
-                                </div>
-                                <div class="form-group">
-                                    <label for="input-phone">Número telefónico</label>
-                                    <input class="form-control" value='${item.numero_telefono}' id="input-phone" placeholder="">
-                                </div>  
-                                <div class="form-group">
-                                    <label for="input-formacd">Formación académica</label>
-                                    <input class="form-control" value='${item.formacion_academica}' id="input-formacd" placeholder="">
-                                </div>   
-                                <div class="form-group">
-                                    <label for="input-profexp">Experiencia profesional </label>
-                                    <input class="form-control" value='${item.experiencia_profesional}' id="input-profexp" placeholder="">
-                                </div>
-                                <div class="form-group">
-                                    <label for="input-idioms">Idiomas</label>
-                                    <input class="form-control" value='${item.idiomas_domina}' id="input-idioms" placeholder="">
-                                </div>
-                                <div class="form-group">
-                                    <label for="input-skills">habiliades academico</label>
-                                    <input class="form-control" value='${item.habilidades_academico}' id="input-skills" placeholder="">
-                                </div>
-                                <div class="form-group">
-                                    <label for="input-ointerests">Otros intereses</label>
-                                    <input class="form-control" value='${item.otros_intereses}' id="input-ointerests" placeholder="">
-                                </div>
+                            </div>
+
+                            
 
                                 <div id="buttons">
                                 <button rel="noopener" target="_blank" onClick="update(${item.id_usuario})">Actualizar</button>

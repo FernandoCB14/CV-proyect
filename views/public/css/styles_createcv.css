@@ -105,6 +105,25 @@ h2{
     font-size: .8rem;
     cursor: pointer;
     color: white;
+    font-family: 'Montserrat', sans-serif;
+
+    
+}
+.buttons .btn{
+    width: 15%;
+    height: 42px;
+    margin: auto;
+    border: solid thin #26477D;
+    padding: .5rem;
+    border-radius: 2rem;
+    background-color: #26477D;
+    font-weight: 600;
+    margin-top: 1rem;
+    font-size: .8rem;
+    cursor: pointer;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+
     
 }
 
