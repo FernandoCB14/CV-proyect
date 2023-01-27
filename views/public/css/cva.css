@@ -12,12 +12,12 @@ header{
   margin-left: -8px;
   margin-top: -8px;
   color: white;
-  /* display: grid;
-  grid-template-columns: 1.1fr 1.3fr 1.3fr 1.3fr; */
+  display: grid;
+  grid-template-columns: 1.5fr 0.8fr 0.8fr 0.8fr 1.1fr;
   
 }
 .textheader{
-  margin-left: 5%;
+  margin-left: 15%;
   margin-bottom: -1%;
 }
 .fotoperfil{
@@ -39,13 +39,16 @@ header{
   color: #26477D;
   text-align: right;
   margin-right: 40px;
+  margin-top: 30px;
   font-size: xx-small;
 }
 .nombres{
   padding-left: 5px;
   font-size: large;
   color: #26477D;
-  margin-left: 35px;
+  /* margin-left: 35px; */
+  font-weight: bold;
+
 }
 .form-group1{
   /* display: grid;
@@ -70,6 +73,8 @@ header{
   padding-left: 40px; */
   text-align: left;
   font-size: small;
+  font-weight: bold;
+
 }
 .form-group2{
   /* display: grid;
@@ -124,8 +129,8 @@ header{
   background-color: transparent;
   border: none;
   text-align: center;
-  color: #26477D;
-  text-align: center;
+  color: #ffffff;
+  /* text-align: right; */
   /* width: 60%; */
   /* padding-right: 7.5px; */
   margin: 5px 0;
@@ -173,5 +178,16 @@ header{
   height: 5%;
   
 }
-
+.contenido2 textarea{
+  background-color: transparent;
+  height: 100px;
+  width: 95%;
+  padding-right: 7.5px;
+  padding: 10px;
+  margin: 5px 0;
+  box-sizing: border-box;
+  font-size: medium;
+  border-radius: 10px;
+  border: #26477D thin solid;
+}
 
