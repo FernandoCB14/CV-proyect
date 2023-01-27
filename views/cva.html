@@ -17,94 +17,93 @@
 </head>
 
 <body>
-    <form action="">
     <header>
         <h1 class="textheader">Perfil académico</h1>
+        <div class="nombres">
+            <div class="form-group-names">
+                <input type="name" class="form-control" id="input-name" placeholder="Nombre" required>
+                <!-- <textarea name="" class="form-control" id="input-name" cols="30" rows="10"></textarea> -->
+            </div>
+        </div>
+        <div class="nombres">
+            <div class="form-group-names">
+                <input class="form-control" id="input-ln" placeholder="Apellido Paterno" required>
+            </div>
+        </div>
+        <div class="nombres">
+            <div class="form-group-names">
+                <input class="form-control" id="input-mln" placeholder="Apellido Materno" required>
+            </div>
+        </div>
     </header>
-    </form>
-    <div class="contenido">
-        <div class="contenido1">
-            <div class="nombres">
-                <div class="form-group-names">
-                    <input type="name" class="form-control" id="input-name" placeholder="Nombre">
-                    <!-- <textarea name="" class="form-control" id="input-name" cols="30" rows="10"></textarea> -->
-                    <!-- <textarea name="" id="input-name" cols="30" rows="10" class="form-control"></textarea> -->
+    <form action="../views/opencv.html">
+        <div class="contenido">
+            <div class="contenido1">
+                <div class="detalles">
+                    <h1>Datos de contacto</h1>
+                </div>
+                <div class="form-group1">
+                    <label for="input-dir">Dirección</label><br>
+                    <input class="form-control" id="input-dir" placeholder="Colonia, calle y número" name="direction" required>
+                </div>
+                <div class="form-group1">
+                    <label for="input-zp">Código postal</label>
+                    <input class="form-control" id="input-zp" placeholder="Código de 6 digitos" required>
+                </div>
+                <div class="form-group1">
+                    <label for="input-sta">Estado</label><br>
+                    <input class="form-control" id="input-sta" placeholder="Entidad Federativa" required>
+                </div>
+                <div class="form-group1">
+                    <label for="input-mail">Correo electrónico</label>
+                    <input class="form-control" id="input-mail" placeholder="example@example.com" required>
+                </div>
+                <div class="form-group1">
+                    <label for="input-tnum">Número de teléfono</label>
+                    <input class="form-control" id="input-tnum" placeholder="Número de 10 dígitos" required>
                 </div>
             </div>
-            <div class="nombres">
-                <div class="form-group-names">
-                    <input class="form-control" id="input-ln" placeholder="Apellido Paterno">
+            <div class="contenido2">
+                <div class="perfil">
+                    <h1>Perfil</h1>
                 </div>
-            </div>
-            <div class="nombres">
-                <div class="form-group-names">
-                    <input class="form-control" id="input-mln" placeholder="Apellido Materno">
+                <div class="form-group2">
+                    <label for="input-formacd">Formación académica</label>
+                    <!-- <input type="text" class="form-control" id="input-formacd" placeholder="" required> -->
+                    <textarea name="" id="input-formacd" cols="30" rows="10"></textarea>
                 </div>
-            </div>
-            <div class="detalles">
-                <h1>Datos de contacto</h1>
-            </div>
-            <div class="form-group1">
-                <label for="input-dir">Dirección</label><br>
-                <input class="form-control" id="input-dir" placeholder="Colonia, calle y número" name="direction" required>
-            </div>
-            <div class="form-group1">
-                <label for="input-zp">Código postal</label>
-                <input class="form-control" id="input-zp" placeholder="Código de 6 digitos" required>
-            </div>
-            <div class="form-group1">
-                <label for="input-sta">Estado</label><br>
-                <input class="form-control" id="input-sta" placeholder="Entidad Federativa" required>
-            </div>
-            <div class="form-group1">
-                <label for="input-mail">Correo electrónico</label>
-                <input class="form-control" id="input-mail" placeholder="example@example.com" required>
-            </div>
-            <div class="form-group1">
-                <label for="input-tnum">Número de teléfono</label>
-                <input class="form-control" id="input-tnum" placeholder="Número de 10 dígitos" required>
-            </div>
-        </div>
-        <div class="contenido2">
-            <div class="perfil">
-                <h1>Perfil</h1>
-            </div>
-            <div class="form-group2">
-                <label for="input-formacd">Formación académica</label>
-                <!-- <input type="text" class="form-control" id="input-formacd" placeholder="" required> -->
-                <textarea name="" id="input-formacd" cols="30" rows="10" ></textarea>
-            </div>
-            <div class="form-group2">
-                <label for="input-profexp">Experiencia profesional</label>
-                <!-- <input class="form-control" id="input-profexp" placeholder="" required> -->
-                <textarea name="" id="input-profexp" cols="30" rows="10" ></textarea>
-            </div>
-            <div class="form-group2">
-                <label for="input-idioms">Idiomas que domina</label>
-                <!-- <input class="form-control" id="input-idioms" placeholder="" required> -->
-                <textarea name="" id="input-idioms" cols="30" rows="10" ></textarea>
-            </div>
-            <div class="form-group2">   
-                <label for="input-hab">Habilidades académicas</label>
-                <!-- <input class="form-control" id="input-hab" placeholder="" required> -->
-                <textarea name="" id="input-hab" cols="30" rows="10" ></textarea>
-            </div>
-            <div class="form-group2">
-                <label for="input-ointereses">Otros interese</label>
-                <!-- <input class="form-control" id="input-ointereses" placeholder="" required> -->
-                <textarea name="" id="input-ointereses" cols="30" rows="10" ></textarea>
+                <div class="form-group2">
+                    <label for="input-profexp">Experiencia profesional</label>
+                    <!-- <input class="form-control" id="input-profexp" placeholder="" required> -->
+                    <textarea name="" id="input-profexp" cols="30" rows="10"></textarea>
 
+                </div>
+                <div class="form-group2">
+                    <label for="input-idioms">Idiomas que domina</label>
+                    <!-- <input class="form-control" id="input-idioms" placeholder="" required> -->
+                    <textarea name="" id="input-idioms" cols="30" rows="10"></textarea>
+
+                </div>
+                <div class="form-group2">   
+                    <label for="input-hab">Habilidades académicas</label>
+                    <!-- <input class="form-control" id="input-hab" placeholder="" required> -->
+                    <textarea name="" id="input-hab" cols="30" rows="10"></textarea>
+
+                </div>
+                <div class="form-group2">
+                    <label for="input-ointereses">Otros interese</label>
+                    <!-- <input class="form-control" id="input-ointereses" placeholder="" required> -->
+                    <textarea name="" id="input-ointereses" cols="30" rows="10"></textarea>
+
+                </div>
             </div>
         </div>
         
-        
-    </div>
-    <!-- <form action="../views/opencv.html"> -->
     <div class="d-flex justify-content-between">
         <button id="btn1">Enviar</button>
         <input id="btn1" type="submit" value="Regresar" onClick="history.go(-1);">
     </div>
-</form>
+    </form>
     
 
 </body>

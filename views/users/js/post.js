@@ -53,11 +53,9 @@ function newdataA(){
             'Authorization': "bearer " + localStorage.getItem("token"),
         }
     }).then(function (res){
-        if(res.data.code ===200){
-            alert("Datos creados");
-            window.location.href="opencv.html"; 
+        alert("Datos creados");
+        if(res.data.code ===201){
 
-            
         }else{
             alert("Algo salió mal");
         }
@@ -106,14 +104,14 @@ function newdataP(){
             'Authorization': "bearer " + localStorage.getItem("token"),
         }
     }).then(function (res){
+        alert("Datos creados");
         if(res.data.code ===200){
-            alert("Datos creados");
-            window.location.href="opencv.html"; 
+            
         }else{
             alert("Algo salió mal");
         }
     }).catch(function(err){
         console.log(err);
-        alert("Datos incompletos");
+        // alert("Datos incompletos");
     });
 }

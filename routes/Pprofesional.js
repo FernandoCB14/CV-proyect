@@ -30,7 +30,7 @@ profesional.post("/insert", async (req, res, next) => {
     const id_usuario = req.user.user_id;
     console.log(id_usuario);
     console.log(req.body);
-    if (req.body.keys !== null || undefined && req.body.values !== null || undefined) {
+    if (nombre && apellido_materno && apellido_materno && direccion && codigo_postal && estado && correo_electronico && numero_telefono && formacion_academica && experiencia_profesional && idiomas_domina && descripcion_profesional && habilidades_profesional) {
         let query = "INSERT INTO perfil_general(nombre, apellido_paterno, apellido_materno, direccion, codigo_postal,estado, correo_electronico, numero_telefono, formacion_academica, experiencia_profesional, idiomas_domina, user_id)";
         query += `VALUES(
             '${nombre}',
@@ -56,7 +56,7 @@ profesional.post("/insert", async (req, res, next) => {
         const result = await db.query(query2);
         console.log(result);
         if (result.affectedRows == 1) {
-            return res.status(200).json({ code: 200, message: "usuario insertado correctamente" });
+            return res.status(201).json({ code: 201, message: "usuario insertado correctamente" });
         }
         return res.status(400).json({ code: 400, message: "ocurrió un error" });
     }

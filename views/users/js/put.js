@@ -39,17 +39,16 @@ function showData(usuario) {
         div.id = `user-data`;
 
         div.innerHTML = `<div>
-
                             <div class="contenido">
                                 <div class="contenido1">
                                     <div class="nombres">
                                         <div class="form-group-names">
-                                            <label for="input-name">Nombre</label>
                                             <input class="form-control" value='${item.nombre}'id="input-name" placeholder="">
                                             <input class="form-control" value='${item.apellido_paterno}' id="input-ln" placeholder="">
                                             <input class="form-control" value='${item.apellido_materno}' id="input-mln" placeholder="">
                                         </div>
-                                        <div class="detalles">
+                                    </div>
+                                    <div class="detalles">
                                             <h1>Datos de contacto</h1>
                                         </div>
                                         <div class="form-group1">
@@ -71,43 +70,40 @@ function showData(usuario) {
                                         <div class="form-group1">
                                             <label for="input-phone">Número telefónico</label>
                                             <input class="form-control" value='${item.numero_telefono}' id="input-phone" placeholder="">
-                                        </div>  
-                                    </div>
+                                        </div>
                                 </div>
-
                                 <div class="contenido2">
+                                    <div class="perfil">
+                                        <h1>Perfil</h1>
+                                    </div>
                                     <div class="form-group2">
                                         <label for="input-formacd">Formación académica</label>
-                                        <input class="form-control" value='${item.formacion_academica}' id="input-formacd" placeholder="">
-                                        <textarea name="" value='${item.formacion_academica}' id="input-formacd" cols="30" rows="10" ></textarea>
-
+                                        <input class="form-control" value="${item.formacion_academica}" id="input-formacd" placeholder="">
                                     </div>   
                                     <div class="form-group2">
                                         <label for="input-profexp">Experiencia profesional </label>
-                                        <input class="form-control" value='${item.experiencia_profesional}' id="input-profexp" placeholder="">
+                                        <input class="form-control" value="${item.experiencia_profesional}" id="input-profexp" placeholder="">
                                     </div>
                                     <div class="form-group2">
                                         <label for="input-idioms">Idiomas</label>
-                                        <input class="form-control" value='${item.idiomas_domina}' id="input-idioms" placeholder="">
+                                        <input class="form-control" value="${item.idiomas_domina}" id="input-idioms" placeholder="">
+
                                     </div>
                                     <div class="form-group2">
                                         <label for="input-skills">habiliades academico</label>
-                                        <input class="form-control" value='${item.habilidades_academico}' id="input-skills" placeholder="">
+                                        <input class="form-control" value="${item.habilidades_academico}" id="input-skills" placeholder="">
+
                                     </div>
                                     <div class="form-group2">
                                         <label for="input-ointerests">Otros intereses</label>
-                                        <input class="form-control" value='${item.otros_intereses}' id="input-ointerests" placeholder="">
+                                        <input class="form-control" value="${item.otros_intereses}" id="input-ointerests" placeholder="">
                                     </div>
                                 </div>
                             </div>
-
-                            
-
-                                <div id="buttons">
-                                <button rel="noopener" target="_blank" onClick="update(${item.id_usuario})">Actualizar</button>
-                                <input type="button" value="Regresar" onClick="history.go(-1);">
-                                </div>
-                
+                            <div id="buttons">
+                                <button id="btn1" rel="noopener" target="_blank" onClick="update(${item.id_usuario})">Actualizar</button>
+                                <input id="btn1" type="button" value="Regresar" onClick="history.go(-1);">
+                            </div>
                         </div>`;
         fragment.appendChild(div);
     // });
