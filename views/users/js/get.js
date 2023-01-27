@@ -87,7 +87,7 @@ function update(id, tipo) {
     }else{
         window.location= "editcva.html"
     }
-    
+     
 }
 
 function btnpdf(id) {

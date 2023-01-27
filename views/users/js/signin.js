@@ -15,7 +15,6 @@ function init(){
 }
 
 function signin(){
-    var name = document.getElementById('input-name').value;
     var mail = document.getElementById('input-mail').value;
     var pass = document.getElementById('input-password').value;
 
@@ -23,12 +22,11 @@ function signin(){
         method: 'post',
         url:'http://localhost:8081/user/signin',
         data:{
-            user_name: name,
             user_mail: mail,
             user_password: pass
         }
     }).then(function (res){
-        alert("Registro exitoso");
+        // alert("Registro exitoso");
         if(res.data.code ===201){
             window.location.href = "login.html";
             console.log(res);

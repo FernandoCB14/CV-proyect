@@ -6,8 +6,7 @@ function init(){
             window.location.href = "signin.html"
         });
         document.querySelector('.btn-primary').addEventListener('click', login);
-    }else{
-        
+    }else{   
         window.location.href="info.html"
     }
 }
