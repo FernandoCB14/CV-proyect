@@ -1,11 +1,10 @@
 
-
 window.onload = init;
 var headers = {};
 var url = "http://localhost:8081";
 
 
-// const mysql= require('mysql');
+
 
 function init() {
     if (localStorage.getItem("token")) {
@@ -30,6 +29,7 @@ function searchCvsa() {
             
         })
 }
+
 
 function showCards(cvs) {
     const myCvs = document.getElementById('my-cvs');
@@ -79,6 +79,7 @@ function deleteCv(id) {
             });
 }; 
 
+
 function update(id, tipo) {
     localStorage.setItem("id", id)
 
@@ -88,23 +89,6 @@ function update(id, tipo) {
         window.location= "editcva.html"
     }
      
-}
-
-function btnpdf(id) {
-    var doc = new jsPDF('p', 'pt', 'letter');
-    var margin = 10;
-    var scale = (doc.internal.pageSize.width - margin * 2 )/ document.body.scrollWidth;
-    doc.html(document.body,{
-        x:margin,
-        y: margin,
-        html2canvas:{
-            scale: scale,
-
-        },
-        callback: function(doc){
-            doc.output('dataurlnewwindow', {filname: 'fiche'});
-        }
-    }); 
 }
 
 

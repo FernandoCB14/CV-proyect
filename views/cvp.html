@@ -16,26 +16,27 @@
 </head>
 <body>
     <header>
-        <h1 class="textheader">Perfil profesional</h1>
-        <div class="nombres">
-            <div class="form-group-names">
-                <input class="form-control" id="input-name" placeholder="Nombre" required>
+        
+            <h1 class="textheader">Perfil profesional</h1>
+            <div class="nombres">
+                <div class="form-group-names">
+                    <input type="name" class="form-control" id="input-name" placeholder="Nombre" required>
+                </div>
             </div>
-        </div>
-        <div class="nombres">
-            <div class="form-group-names">
-                <input class="form-control" id="input-ln" placeholder="Apellido Paterno" required>
-                <!-- <textarea id="input-ln" id="" cols="30" rows="10"></textarea> -->
+            <div class="nombres">
+                <div class="form-group-names">
+                    <input class="form-control" id="input-ln" placeholder="Apellido Paterno" required>
+                </div>
             </div>
-        </div>
-        <div class="nombres">
-            <div class="form-group-names">
-                <input class="form-control" id="input-mln" placeholder="Apellido Materno" required>
+            <div class="nombres">
+                <div class="form-group-names">
+                    <input class="form-control" id="input-mln" placeholder="Apellido Materno" required>
+                </div>
             </div>
-        </div>
-    </header>
-    <form action="../views/opencv.html">
-        <div class="contenido">
+        </header>
+        <form action="../views/opencv.html">
+
+    <div class="contenido">
             <div class="contenido1">
                 
                 <div class="x">
@@ -48,23 +49,23 @@
                 </div>
                 <div class="form-group1">
                     <label for="input-dir">Dirección</label>
-                    <input class="form-control" id="input-dir" placeholder="Colonia, calle y número" required>
+                    <input class="form-control" id="input-dir" placeholder="Colonia, calle y número">
                 </div>
                 <div class="form-group1">
                     <label for="input-zp">Código postal</label>
-                    <input class="form-control" id="input-zp" placeholder="Código de 6 digitos" required>
+                    <input class="form-control" id="input-zp" placeholder="Código de 6 digitos">
                 </div>
                 <div class="form-group1">
                     <label for="input-sta">Estado</label>
-                    <input class="form-control" id="input-sta" placeholder="Entidad Federativa" required>
+                    <input class="form-control" id="input-sta" placeholder="Entidad Federativa">
                 </div>
                 <div class="form-group1">
                     <label for="input-mail">Correo electrónico</label>
-                    <input class="form-control" id="input-mail" placeholder="example@example.com" required>
+                    <input class="form-control" id="input-mail" placeholder="example@example.com">
                 </div>
                 <div class="form-group1">
                     <label for="input-tnum">Número de teléfono</label>
-                    <input class="form-control" id="input-tnum" placeholder="Número de 10 digitos" required>
+                <input class="form-control" id="input-tnum" placeholder="Número de 10 digitos">
                 </div>
             </div>
             <div class="contenido2">
@@ -73,30 +74,28 @@
                 </div>
                 <div class="form-group2">
                     <label for="input-formacd">Formación académica</label>
-                    <!-- <input class="form-control" id="input-formacd" placeholder="" required> -->
-                    <textarea  class="form-control" id="input-formacd" placeholder="" cols="30" rows="1"></textarea>
+                    <!-- <input type="text" class="form-control" id="input-formacd" placeholder="" required> -->
+                    <textarea name="" id="input-formacd" cols="30" rows="10"></textarea>
                 </div>
                 <div class="form-group2">
                     <label for="input-profexp">Experiencia profesional</label>
                     <!-- <input class="form-control" id="input-profexp" placeholder="" required> -->
-                    <textarea  class="form-control" id="input-formacd" placeholder="" cols="30" rows="1"></textarea>
+                    <textarea name="" id="input-profexp" cols="30" rows="10"></textarea>
                 </div>
                 <div class="form-group2">
                     <label for="input-idioms">Idiomas que domina</label>
                     <!-- <input class="form-control" id="input-idioms" placeholder="" required> -->
-                    <textarea  class="form-control" id="input-formacd" placeholder="" cols="30" rows="1"></textarea>
+                    <textarea name="" id="input-idioms" cols="30" rows="10"></textarea>
 
                 </div>
                 <div class="form-group2">
                     <label for="input-profdesc">Descripción profesional</label>
-                    <!-- <input class="form-control" id="input-profdesc" placeholder="" required> -->
-                    <textarea  class="form-control" id="input-formacd" placeholder="" cols="30" rows="1"></textarea>
+                    <textarea class="form-control" id="input-profdesc" cols="30" rows="10"></textarea>
 
                 </div>
                 <div class="form-group2">
-                    <label for="input-profhabi">Habilidades profesionales</label>
-                    <!-- <input class="form-control" id="input-profhabi" placeholder="" required> -->
-                    <textarea  class="form-control" id="input-formacd" placeholder="" cols="30" rows="1"></textarea>
+                <label for="input-profhabi">Habilidades profesionales</label>
+                <textarea class="form-control" id="input-profhabi" cols="30" rows="10"></textarea>
 
                 </div>
             </div>
@@ -105,9 +104,7 @@
             <button id="btn1">Enviar</button>
             <input id="btn1" type="button" value="Regresar" onClick="history.go(-1);">
         </div>
-
-
-    </form>
+</form>
     
 </body>
 </html>

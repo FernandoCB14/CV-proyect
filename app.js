@@ -7,6 +7,8 @@ const user = require("./routes/user");
 const auth = require('./middlewares/auth');
 const notfound= require("./middlewares/notFound");
 const cors= require("./middlewares/cors");
+require('dotenv').config();
+const port= process.env.PORT;
 
 
 app.use(cors);
@@ -26,8 +28,12 @@ app.use("/Pprofesional", profesional);
 app.use(notfound);
 
 
-app.listen(process.env.PORT || 8081,()=>{
-    console.log('Server is runing');
-});
+// app.listen(process.env.PORT || 8081,()=>{
+//     console.log('Server is runing');
+// });
+
+app.listen(port, ()=>{
+    console.log(`Server is runing at http://localhost:${port}`);
+})
 
 

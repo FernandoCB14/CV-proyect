@@ -18,7 +18,14 @@ profesional.get('/cvs', async (req, res) => {
     let query= `SELECT * FROM perfil_general WHERE user_id = ${id_usuario}`;
     console.log(query);
     const emp = await db.query(query);
-    return res.status(200).json({ code: 200, message: emp });
+    try {
+        return res.status(200).json({ code: 200, message: emp });
+        
+    } catch (error) {
+        console.log(err);
+        return res.status(500).json({code:500, message:(error)})    
+    }
+    
 });
 
 profesional.post("/insert", async (req, res, next) => {
@@ -47,6 +54,7 @@ profesional.post("/insert", async (req, res, next) => {
             '${id_usuario}')`;
 
         const userResult = await db.query(query);
+        console.log(query);
         console.log(userResult);
         let query2 = "INSERT INTO perfil_profesional(descripcion_profesional, habilidades_profesional, id_usuario)";
         query2 += `VALUES(
