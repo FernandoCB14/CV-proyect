@@ -17,7 +17,7 @@ app.use(express.json());
 app.use(express.urlencoded({extended:true}))
 
 app.get("/",(req, res, next) =>{
-    return res.status(200).send("Bienvenido al servidor")
+    return res.status(200).send("Bienvenido al server")
 });
 
 app.use("/user", user)
